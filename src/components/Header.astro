@@ -2,66 +2,51 @@
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-6 px-4">
-  <div class="backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 flex items-center justify-between gap-6 shadow-sm w-auto">
+  <div class="relative backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 flex items-center gap-8 shadow-sm">
 
     <!-- Nombre -->
     <a href="/" class="text-sm font-semibold text-gray-900 dark:text-white whitespace-nowrap">
       Brian Rodríguez
     </a>
 
-    <!-- Desktop Links -->
-    <div class="hidden sm:flex items-center gap-6 text-sm font-medium">
+    <!-- Desktop Menu -->
+    <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
+
       <a href="#presentacion"
          class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
         Presentación
       </a>
 
-      <a href="#evidencias"
-         class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-        Evidencias
-      </a>
+      <!-- Evidencias Dropdown -->
+      <div class="relative group">
+
+        <button class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Evidencias ▾
+        </button>
+
+        <!-- Dropdown -->
+        <div class="absolute left-0 mt-3 w-48 rounded-2xl shadow-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+
+          <a href="#modelado" class="block px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-t-2xl">
+            Modelado
+          </a>
+
+          <a href="#normalizacion" class="block px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
+            Normalización
+          </a>
+
+          <a href="#sql" class="block px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
+            SQL
+          </a>
+
+          <a href="#proyecto" class="block px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-b-2xl">
+            Proyecto
+          </a>
+
+        </div>
+      </div>
+
     </div>
-
-    <!-- Mobile Hamburger -->
-    <button id="mobile-menu-btn"
-      class="sm:hidden p-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-      aria-label="Toggle menu">
-      ☰
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu"
-    class="hidden absolute top-16 left-4 right-4 backdrop-blur-md bg-white/90 dark:bg-gray-950/90 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-4 space-y-3 shadow-lg sm:hidden">
-
-    <a href="#presentacion"
-      onclick="closeMobileMenu()"
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-      Presentación
-    </a>
-
-    <a href="#evidencias"
-      onclick="closeMobileMenu()"
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-      Evidencias
-    </a>
 
   </div>
 </nav>
-
-<script>
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) menu.classList.toggle('hidden');
-  }
-
-  function closeMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) menu.classList.add('hidden');
-  }
-
-  const btn = document.getElementById('mobile-menu-btn');
-  if (btn) {
-    btn.addEventListener('click', toggleMobileMenu);
-  }
-</script>
