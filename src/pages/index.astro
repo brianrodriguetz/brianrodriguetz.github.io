@@ -2,105 +2,46 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import heroPhoto from '../assets/photo.jpeg';
-
-const translations = {
-  greeting: { 
-    en: "Hello, I'm", 
-    es: "Hola, soy" 
-  },
-  name: { 
-    en: "Brian Rodríguez", 
-    es: "Brian Rodríguez" 
-  },
-  description: { 
-    en: "Systems Engineering student interested in technology and software development.", 
-    es: "Estudiante de Ingeniería de Sistemas interesado en la tecnología y el desarrollo de software." 
-  },
-  availability: {
-    en: "Systems Engineering Student",
-    es: "Estudiante de Ingeniería de Sistemas"
-  },
-  viewProjects: { 
-    en: "View Projects", 
-    es: "Ver Proyectos" 
-  },
-  getInTouch: { 
-    en: "Get in Touch", 
-    es: "Contactar" 
-  },
-  about: { 
-    en: "Presentation", 
-    es: "Presentación" 
-  },
-  aboutDesc: {
-    es: "Me pueden llamar Brian. Soy estudiante de Ingeniería de Sistemas y me interesa entender cómo funcionan los sistemas y la tecnología desde la parte lógica y práctica. Considero que la asignatura Bases de Datos 1 será muy importante en mi formación profesional, ya que permite comprender cómo se organiza, almacena y consulta la información, que es fundamental en cualquier sistema o aplicación real. Este semestre quiero demostrar que puedo aprender de forma constante, fortalecer mis bases en sistemas y aplicar los conocimientos adquiridos en proyectos prácticos.",
-    en: "My name is Brian. I am a Systems Engineering student interested in understanding how systems and technology work from both a logical and practical perspective. I believe the Database Fundamentals course will be very important for my professional development, as it helps understand how information is organized, stored, and queried, which is essential for real-world applications. This semester, I want to prove that I can learn consistently, strengthen my foundations, and apply my knowledge in practical projects."
-  },
-  tech: { 
-    en: "Technologies", 
-    es: "Tecnologías" 
-  }
-};
 ---
 
-<Layout title={`Home | Brian Rodríguez`}>
+<Layout title="Home | Brian Rodríguez">
   <Header />
 
-  <main class="min-h-screen px-4 sm:px-6 md:px-6">
-    <!-- HERO / PRESENTACIÓN -->
-    <section class="max-w-3xl mx-auto min-h-[calc(100vh-5rem)] flex flex-col justify-center pt-32 sm:pt-48 pb-16 sm:pb-24 fade-in">
-      <div class="flex flex-col items-center gap-6 sm:gap-8 text-center">
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-lg dark:shadow-white/20">
-            <img src={heroPhoto.src} alt="Brian Rodríguez" class="w-full h-full object-cover" />
-          </div>
-          <div class="px-3 sm:px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 h-fit">
-            <p class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">
-              {translations.availability.es}
-            </p>
-          </div>
-        </div>
+  <main class="max-w-3xl mx-auto px-6 py-20 space-y-16">
 
-        <div>
-          <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
-            {translations.greeting.es}
-          </p>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
-            {translations.name.es}
-          </h1>
-          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-lg mx-auto mb-6">
-            {translations.description.es}
-          </p>
-        </div>
-      </div>
+    <!-- PRESENTACIÓN -->
+    <section>
+      <h1 class="text-4xl font-bold mb-4">Hola, soy Brian</h1>
+
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Soy estudiante de Ingeniería de Sistemas y me interesa la tecnología
+        y el desarrollo de software.
+      </p>
     </section>
 
-    <!-- SOBRE MÍ / ACTIVIDAD -->
-    <section class="max-w-3xl mx-auto py-12 sm:py-16 border-t border-gray-200 dark:border-gray-700 fade-in">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-        {translations.about.es}
-      </h2>
-      <div class="text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-        {translations.aboutDesc.es}
-      </div>
+    <!-- BASES DE DATOS -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Bases de Datos 1</h2>
+
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+        Considero que la asignatura Bases de Datos 1 será fundamental en mi
+        formación profesional, ya que me permitirá comprender cómo se organiza,
+        almacena y consulta la información, que es la base de cualquier sistema
+        o aplicación real.
+      </p>
     </section>
 
-    <!-- TECNOLOGÍAS (puedes dejarlo así) -->
-    <section class="max-w-3xl mx-auto py-12 sm:py-16 border-t border-gray-200 dark:border-gray-700 fade-in">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-        {translations.tech.es}
-      </h2>
+    <!-- OBJETIVO -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Objetivo del semestre</h2>
 
-      <div class="flex flex-wrap gap-3">
-        <span class="px-4 py-2 border rounded-full text-sm">HTML</span>
-        <span class="px-4 py-2 border rounded-full text-sm">CSS</span>
-        <span class="px-4 py-2 border rounded-full text-sm">JavaScript</span>
-        <span class="px-4 py-2 border rounded-full text-sm">Astro</span>
-        <span class="px-4 py-2 border rounded-full text-sm">Git</span>
-        <span class="px-4 py-2 border rounded-full text-sm">Bases de Datos</span>
-      </div>
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+        Este semestre quiero demostrar que puedo aprender de forma constante,
+        fortalecer mis bases en sistemas y aplicar los conocimientos adquiridos
+        en proyectos prácticos.
+      </p>
     </section>
+
   </main>
 
   <Footer />
