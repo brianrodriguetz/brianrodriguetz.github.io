@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import profilePhoto from '../assets/brian.jpg';
 ---
 
 <Layout title="Home | Brian Rodríguez">
@@ -9,8 +10,10 @@ import Footer from '../components/Footer.astro';
 
   <main class="max-w-4xl mx-auto px-6 py-28 space-y-28">
 
+    <!-- ===================== -->
     <!-- PRESENTACIÓN -->
-    <section id="presentacion" class="space-y-8 text-center">
+    <!-- ===================== -->
+    <section id="presentacion" class="space-y-10 text-center">
 
       <div class="inline-block px-4 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
         Ingeniería de Sistemas · Universidad El Bosque
@@ -18,84 +21,110 @@ import Footer from '../components/Footer.astro';
 
       <h1 class="text-5xl font-bold tracking-tight">
         Hola, soy 
-        <span class="bg-gradient-to-r from-gray-900 to-gray-500 bg-clip-text text-transparent dark:from-white dark:to-gray-400">
+        <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
           Brian
         </span>
       </h1>
 
-      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-        Me pueden llamar Brian. Soy estudiante de Ingeniería de Sistemas
-        interesado en comprender cómo funcionan los sistemas desde su
-        estructura lógica hasta su implementación práctica.
-      </p>
+      <!-- FOTO TECH -->
+      <div class="flex justify-center mt-8">
+        <div class="relative w-44 h-44 group">
 
-  <div class="mt-10 flex justify-center">
-  <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
-    <iframe
-      class="w-full h-full"
-      src="https://www.youtube.com/embed/TGBAQEspYh4"
-      title="Video de presentación"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
+          <div class="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 opacity-20 blur-xl group-hover:opacity-30 transition duration-500"></div>
 
+          <div class="relative p-[3px] rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500">
+            <div class="rounded-full overflow-hidden bg-white dark:bg-gray-900">
+              <img
+                src={profilePhoto.src}
+                alt="Foto de Brian Rodríguez"
+                class="w-44 h-44 object-cover rounded-full transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          </div>
 
-      <div class="w-24 h-1 bg-gray-300 dark:bg-gray-700 mx-auto rounded-full"></div>
+        </div>
+      </div>
 
       <div class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed space-y-6">
+
+        <p>
+          Me pueden llamar Brian. Soy estudiante de Ingeniería de Sistemas
+          interesado en comprender cómo funcionan los sistemas desde su
+          estructura lógica hasta su implementación práctica.
+        </p>
+
         <p>
           Considero que la asignatura <strong>Bases de Datos 1</strong> será
           fundamental en mi formación profesional, ya que permite comprender
           cómo se organiza, almacena y consulta la información,
-          que es la base de cualquier sistema o aplicación real.
+          que es la base de cualquier aplicación real.
         </p>
+
+        <p class="font-medium text-gray-900 dark:text-white">
+          Este semestre quiero demostrar que puedo aprender de forma constante,
+          fortalecer mis bases y aplicar los conocimientos adquiridos
+          en proyectos prácticos.
+        </p>
+
+      </div>
+
+      <!-- VIDEO -->
+      <div class="mt-12 flex justify-center">
+        <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/ID_DEL_VIDEO"
+            title="Video de presentación"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
 
     </section>
 
+    <!-- ===================== -->
     <!-- EVIDENCIAS -->
-   <section id="evidencias" class="space-y-16">
+    <!-- ===================== -->
+    <section id="evidencias" class="space-y-16">
 
-  <h2 class="text-3xl font-semibold text-center">
-    Evidencias
-  </h2>
+      <h2 class="text-3xl font-semibold text-center">
+        Evidencias
+      </h2>
 
-  <!-- Modelado -->
-  <div id="modelado" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-    <h3 class="text-xl font-semibold mb-3">Modelado</h3>
-    <p class="text-gray-600 dark:text-gray-400">
-      Aquí se agregarán los diagramas entidad-relación y ejercicios de modelado desarrollados durante el semestre.
-    </p>
-  </div>
+      <!-- Modelado -->
+      <div id="modelado" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
+        <h3 class="text-xl font-semibold mb-3">Modelado</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          Aquí se agregarán los diagramas entidad-relación y ejercicios de modelado desarrollados durante el semestre.
+        </p>
+      </div>
 
-  <!-- Normalización -->
-  <div id="normalizacion" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-    <h3 class="text-xl font-semibold mb-3">Normalización</h3>
-    <p class="text-gray-600 dark:text-gray-400">
-      En esta sección se documentarán los procesos de normalización aplicados a distintas estructuras de bases de datos.
-    </p>
-  </div>
+      <!-- Normalización -->
+      <div id="normalizacion" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
+        <h3 class="text-xl font-semibold mb-3">Normalización</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          En esta sección se documentarán los procesos de normalización aplicados a distintas estructuras de bases de datos.
+        </p>
+      </div>
 
-  <!-- SQL -->
-  <div id="sql" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-    <h3 class="text-xl font-semibold mb-3">SQL</h3>
-    <p class="text-gray-600 dark:text-gray-400">
-      Aquí se incluirán consultas, procedimientos y ejercicios prácticos realizados en SQL.
-    </p>
-  </div>
+      <!-- SQL -->
+      <div id="sql" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
+        <h3 class="text-xl font-semibold mb-3">SQL</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          Aquí se incluirán consultas, procedimientos y ejercicios prácticos realizados en SQL.
+        </p>
+      </div>
 
-  <!-- Proyecto -->
-  <div id="proyecto" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-    <h3 class="text-xl font-semibold mb-3">Proyecto</h3>
-    <p class="text-gray-600 dark:text-gray-400">
-      Se documentará el desarrollo del proyecto final integrando modelado, normalización y consultas SQL.
-    </p>
-  </div>
+      <!-- Proyecto -->
+      <div id="proyecto" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
+        <h3 class="text-xl font-semibold mb-3">Proyecto</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          Se documentará el desarrollo del proyecto final integrando modelado, normalización y consultas SQL.
+        </p>
+      </div>
 
-</section>
-
+    </section>
 
   </main>
 
