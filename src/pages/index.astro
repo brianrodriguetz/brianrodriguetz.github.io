@@ -8,30 +8,28 @@ import profilePhoto from '../assets/brian.png';
 <Layout title="Home | Brian Rodríguez">
   <Header />
 
-  <main class="max-w-4xl mx-auto px-6 py-28 space-y-28">
+  <main class="max-w-4xl mx-auto px-6 py-28 space-y-32">
 
     <!-- ===================== -->
-    <!-- PRESENTACIÓN -->
+    <!-- PRESENTACIÓN          -->
     <!-- ===================== -->
-    <section id="presentacion" class="space-y-10 text-center">
+    <section id="presentacion" class="space-y-10 text-center fade-in">
 
       <div class="inline-block px-4 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
         Ingeniería de Sistemas · Universidad El Bosque
       </div>
 
       <h1 class="text-5xl font-bold tracking-tight">
-        Hola, soy 
+        Hola, soy
         <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
           Brian
         </span>
       </h1>
 
-      <!-- FOTO TECH -->
+      <!-- FOTO -->
       <div class="flex justify-center mt-8">
         <div class="relative w-44 h-44 group">
-
-          <div class="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 opacity-20 blur-xl group-hover:opacity-30 transition duration-500"></div>
-
+          <div class="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
           <div class="relative p-[3px] rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500">
             <div class="rounded-full overflow-hidden bg-white dark:bg-gray-900">
               <img
@@ -41,136 +39,509 @@ import profilePhoto from '../assets/brian.png';
               />
             </div>
           </div>
-
         </div>
       </div>
 
-     <div class="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
-
-  <p>
-    Estudiante de Ingeniería de Sistemas enfocado en fortalecer
-    sus bases técnicas y académicas.
-  </p>
-
-  <p>
-    Este espacio funciona como mi portafolio académico
-    para la asignatura Bases de Datos 1.
-  </p>
-
-</div>
-
-
-   <!-- VIDEO DE PRESENTACIÓN -->
-<div class="mt-16 flex justify-center">
-
-  <div class="w-full max-w-4xl">
-
-    <!-- Título -->
-    <div class="text-center mb-6">
-      <h2 class="text-2xl font-semibold">
-        Video de Presentación
-      </h2>
-      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-        Presentación personal y expectativas para Bases de Datos 1
-      </p>
-    </div>
-
-    <!-- Contenedor elegante -->
-    <div class="relative group">
-
-      <!-- Glow suave -->
-      <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 opacity-20 blur-2xl group-hover:opacity-30 transition duration-500"></div>
-
-      <!-- Marco degradado -->
-      <div class="relative p-[3px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 shadow-xl">
-
-        <!-- Video -->
-        <div class="rounded-3xl overflow-hidden bg-black aspect-video">
-          <iframe
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/kwUVKb5iRRM"
-            title="Video de presentación"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-
+      <div class="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Estudiante de Ingeniería de Sistemas enfocado en fortalecer
+          sus bases técnicas y académicas.
+        </p>
+        <p>
+          Este espacio funciona como mi portafolio académico
+          para la asignatura Bases de Datos 1.
+        </p>
       </div>
 
-    </div>
-
-  </div>
-
-</div>
-
+      <!-- VIDEO DE PRESENTACIÓN -->
+      <div class="mt-16 flex justify-center">
+        <div class="w-full max-w-4xl">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-semibold">Video de Presentación</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+              Presentación personal y expectativas para Bases de Datos 1
+            </p>
+          </div>
+          <div class="relative group">
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 opacity-20 blur-2xl group-hover:opacity-30 transition duration-500"></div>
+            <div class="relative p-[3px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 shadow-xl">
+              <div class="rounded-3xl overflow-hidden bg-black aspect-video">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/kwUVKb5iRRM"
+                  title="Video de presentación"
+                  frameborder="0"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </section>
 
-    <!-- ===================== -->
-    <!-- EVIDENCIAS -->
-    <!-- ===================== -->
-    <section id="evidencias" class="space-y-16">
+    <!-- ========================= -->
+    <!-- EVIDENCIAS                -->
+    <!-- ========================= -->
+    <section id="evidencias" class="space-y-24">
 
-      <h2 class="text-3xl font-semibold text-center">
-        Evidencias
-      </h2>
-
-      <!-- Modelado -->
-      <div id="modelado" class="space-y-10">
-
-  <h3 class="text-2xl font-semibold mb-6">Modelado</h3>
-
-  <!-- Modelo 1 -->
-  <div class="space-y-4">
-    <h4 class="font-medium text-lg">Modelo 1 – Sistema [Aerolínea]</h4>
-
-    <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-md">
-      <img 
-        src="/modelos/modelo1.png" 
-        alt="Modelo Entidad Relación 1"
-        class="w-full"
-      />
-    </div>
-  </div>
-
-  <!-- Modelo 2 -->
-  <div class="space-y-4">
-    <h4 class="font-medium text-lg">Modelo 2 – Sistema [Hosppital-Urgencias]</h4>
-
-    <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-md">
-      <img 
-        src="/modelos/modeloHops.png" 
-        alt="Modelo Entidad Relación 2"
-        class="w-full"
-      />
-    </div>
-  </div>
-
-</div>
-
-
-      <!-- Normalización -->
-      <div id="normalizacion" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-        <h3 class="text-xl font-semibold mb-3">Normalización</h3>
-        <p class="text-gray-600 dark:text-gray-400">
-          En esta sección se documentarán los procesos de normalización aplicados a distintas estructuras de bases de datos.
+      <!-- Encabezado de sección -->
+      <div class="text-center fade-in">
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-sm font-medium mb-4">
+          <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+          Portafolio académico · Bases de Datos 1
+        </div>
+        <h2 class="text-3xl font-bold">Evidencias</h2>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+          Ejercicios, talleres y proyectos desarrollados durante el curso
         </p>
       </div>
 
-      <!-- SQL -->
-      <div id="sql" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-        <h3 class="text-xl font-semibold mb-3">SQL</h3>
-        <p class="text-gray-600 dark:text-gray-400">
-          Aquí se incluirán consultas, procedimientos y ejercicios prácticos realizados en SQL.
-        </p>
+      <!-- ─────────────────────── -->
+      <!-- MODELADO                -->
+      <!-- ─────────────────────── -->
+      <div id="modelado" class="space-y-8 fade-in">
+
+        <!-- Encabezado subsección -->
+        <div class="flex items-center gap-4">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-md shadow-indigo-200 dark:shadow-indigo-900/50 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Modelado</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Diagramas Entidad-Relación desarrollados en clase</p>
+          </div>
+        </div>
+
+        <div class="grid gap-6">
+
+          <!-- Modelo 1 -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold">01</span>
+                <h4 class="font-semibold">Sistema Aerolínea</h4>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-medium">ER Diagrama</span>
+            </div>
+            <div class="p-4 overflow-hidden">
+              <div class="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-950 group-hover:scale-[1.01] transition-transform duration-500">
+                <img
+                  src="/modelos/modelo1.png"
+                  alt="Modelo Entidad Relación – Sistema Aerolínea"
+                  class="w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modelo 2 -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold">02</span>
+                <h4 class="font-semibold">Sistema Hospital – Urgencias</h4>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-medium">ER Diagrama</span>
+            </div>
+            <div class="p-4 overflow-hidden">
+              <div class="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-950 group-hover:scale-[1.01] transition-transform duration-500">
+                <img
+                  src="/modelos/modeloHops.png"
+                  alt="Modelo Entidad Relación – Hospital Urgencias"
+                  class="w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modelo 3 — PLACEHOLDER -->
+          <div class="rounded-2xl border border-dashed border-indigo-200 dark:border-indigo-800/60 bg-indigo-50/40 dark:bg-indigo-950/20 overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-400 dark:text-indigo-500 text-xs font-bold">03</span>
+                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Modelo 3 – Próximamente</h4>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
+            </div>
+            <div class="flex items-center justify-center h-32 text-gray-300 dark:text-gray-700">
+              <div class="text-center">
+                <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
+                </svg>
+                <p class="text-xs">Reemplaza esta card con tu próximo modelo</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Proyecto -->
-      <div id="proyecto" class="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
-        <h3 class="text-xl font-semibold mb-3">Proyecto</h3>
-        <p class="text-gray-600 dark:text-gray-400">
-          Se documentará el desarrollo del proyecto final integrando modelado, normalización y consultas SQL.
-        </p>
+      <!-- ─────────────────────── -->
+      <!-- NORMALIZACIÓN           -->
+      <!-- ─────────────────────── -->
+      <div id="normalizacion" class="space-y-8 fade-in">
+
+        <div class="flex items-center gap-4">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 text-white shadow-md shadow-purple-200 dark:shadow-purple-900/50 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Normalización</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Proceso de normalización aplicado a relaciones de datos</p>
+          </div>
+        </div>
+
+        <!-- Taller de normalización -->
+        <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm">
+
+          <!-- Header del taller -->
+          <div class="px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border-b border-gray-100 dark:border-gray-800">
+            <div class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">01</span>
+              <div>
+                <h4 class="font-semibold">Taller 1 – [Nombre del sistema aquí]</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Reemplaza este título con el nombre real del taller</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-6">
+
+            <!-- Tabla sin normalizar -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300">Tabla original (sin normalizar)</h5>
+              </div>
+              <div class="overflow-x-auto rounded-xl border border-red-100 dark:border-red-900/40">
+                <table class="w-full text-sm text-left">
+                  <thead class="bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300">
+                    <tr>
+                      <th class="px-4 py-2.5 font-medium">Columna A</th>
+                      <th class="px-4 py-2.5 font-medium">Columna B</th>
+                      <th class="px-4 py-2.5 font-medium">Columna C</th>
+                      <th class="px-4 py-2.5 font-medium">Columna D</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-red-50 dark:divide-red-900/20 text-gray-500 dark:text-gray-500 italic">
+                    <tr class="bg-white dark:bg-gray-900">
+                      <td class="px-4 py-2.5">dato1</td>
+                      <td class="px-4 py-2.5">dato2</td>
+                      <td class="px-4 py-2.5">dato3</td>
+                      <td class="px-4 py-2.5">dato4</td>
+                    </tr>
+                    <tr class="bg-red-50/30 dark:bg-red-950/10">
+                      <td class="px-4 py-2.5">dato1</td>
+                      <td class="px-4 py-2.5">dato2b</td>
+                      <td class="px-4 py-2.5">dato3</td>
+                      <td class="px-4 py-2.5">dato4b</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-xs text-gray-400 dark:text-gray-600 italic">↑ Reemplaza con tu tabla original sin normalizar</p>
+            </div>
+
+            <!-- Progresión de formas normales -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+              <!-- 1FN -->
+              <div class="rounded-xl border border-yellow-200 dark:border-yellow-900/40 bg-yellow-50/50 dark:bg-yellow-950/20 p-4 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center">1</span>
+                  <span class="text-xs font-bold text-yellow-700 dark:text-yellow-400">Primera Forma Normal</span>
+                </div>
+                <p class="text-xs text-gray-400 dark:text-gray-600 italic">
+                  Describe aquí los cambios aplicados para llegar a 1FN: eliminar grupos repetitivos, atributos atómicos...
+                </p>
+                <div class="mt-2 pt-2 border-t border-yellow-100 dark:border-yellow-900/30">
+                  <p class="text-xs text-gray-300 dark:text-gray-700 italic">→ Agrega tu tabla 1FN aquí</p>
+                </div>
+              </div>
+
+              <!-- 2FN -->
+              <div class="rounded-xl border border-blue-200 dark:border-blue-900/40 bg-blue-50/50 dark:bg-blue-950/20 p-4 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-md bg-blue-200 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center justify-center">2</span>
+                  <span class="text-xs font-bold text-blue-700 dark:text-blue-400">Segunda Forma Normal</span>
+                </div>
+                <p class="text-xs text-gray-400 dark:text-gray-600 italic">
+                  Describe aquí los cambios para 2FN: eliminar dependencias parciales respecto a la llave primaria...
+                </p>
+                <div class="mt-2 pt-2 border-t border-blue-100 dark:border-blue-900/30">
+                  <p class="text-xs text-gray-300 dark:text-gray-700 italic">→ Agrega tu tabla 2FN aquí</p>
+                </div>
+              </div>
+
+              <!-- 3FN -->
+              <div class="rounded-xl border border-green-200 dark:border-green-900/40 bg-green-50/50 dark:bg-green-950/20 p-4 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-md bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-bold flex items-center justify-center">3</span>
+                  <span class="text-xs font-bold text-green-700 dark:text-green-400">Tercera Forma Normal</span>
+                </div>
+                <p class="text-xs text-gray-400 dark:text-gray-600 italic">
+                  Describe aquí los cambios para 3FN: eliminar dependencias transitivas...
+                </p>
+                <div class="mt-2 pt-2 border-t border-green-100 dark:border-green-900/30">
+                  <p class="text-xs text-gray-300 dark:text-gray-700 italic">→ Agrega tu tabla 3FN aquí</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Taller 2 placeholder -->
+        <div class="rounded-2xl border border-dashed border-purple-200 dark:border-purple-800/60 bg-purple-50/30 dark:bg-purple-950/10 overflow-hidden">
+          <div class="flex items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-400 dark:text-purple-600 text-xs font-bold">02</span>
+              <h4 class="font-semibold text-gray-400 dark:text-gray-600">Taller 2 – Próximamente</h4>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ─────────────────────── -->
+      <!-- SQL                     -->
+      <!-- ─────────────────────── -->
+      <div id="sql" class="space-y-8 fade-in">
+
+        <div class="flex items-center gap-4">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md shadow-blue-200 dark:shadow-blue-900/50 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">SQL</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Consultas y ejercicios prácticos realizados en clase</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- Ejercicio SQL 1 -->
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-blue-50 dark:hover:shadow-blue-900/20 transition-all duration-300">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold">01</span>
+                <h4 class="font-semibold">Taller SQL – [Nombre del ejercicio aquí]</h4>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-xs px-2 py-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono font-medium">SELECT</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-mono font-medium">JOIN</span>
+              </div>
+            </div>
+            <div class="p-4 space-y-3">
+              <p class="text-sm text-gray-500 dark:text-gray-400 px-2">
+                Descripción del ejercicio: qué se busca resolver con esta consulta.
+                Reemplaza este texto con la explicación real.
+              </p>
+              <!-- Bloque de código -->
+              <div class="rounded-xl overflow-hidden border border-gray-800 dark:border-gray-700">
+                <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
+                  <span class="text-xs text-gray-400 font-mono">query_01.sql</span>
+                  <div class="flex gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-400/60"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-400/60"></span>
+                  </div>
+                </div>
+                <pre class="bg-gray-950 p-5 overflow-x-auto text-sm leading-relaxed"><code class="language-sql"><span class="text-blue-400">-- Reemplaza con tu consulta SQL real</span>
+<span class="text-purple-400">SELECT</span>  <span class="text-green-400">columna1</span>, <span class="text-green-400">columna2</span>
+<span class="text-purple-400">FROM</span>    tabla
+<span class="text-purple-400">WHERE</span>   condicion <span class="text-yellow-400">=</span> <span class="text-orange-400">'valor'</span>
+<span class="text-purple-400">ORDER BY</span> columna1 <span class="text-purple-400">ASC</span>;</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ejercicio SQL 2 -->
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-blue-50 dark:hover:shadow-blue-900/20 transition-all duration-300">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold">02</span>
+                <h4 class="font-semibold">Taller SQL – [Nombre del ejercicio aquí]</h4>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-xs px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-mono font-medium">INSERT</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 font-mono font-medium">UPDATE</span>
+              </div>
+            </div>
+            <div class="p-4 space-y-3">
+              <p class="text-sm text-gray-500 dark:text-gray-400 px-2">
+                Descripción del ejercicio. Reemplaza este texto con la explicación real.
+              </p>
+              <div class="rounded-xl overflow-hidden border border-gray-800 dark:border-gray-700">
+                <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
+                  <span class="text-xs text-gray-400 font-mono">query_02.sql</span>
+                  <div class="flex gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-400/60"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-400/60"></span>
+                  </div>
+                </div>
+                <pre class="bg-gray-950 p-5 overflow-x-auto text-sm leading-relaxed"><code class="language-sql"><span class="text-blue-400">-- Reemplaza con tu consulta SQL real</span>
+<span class="text-purple-400">INSERT INTO</span> tabla (<span class="text-green-400">col1</span>, <span class="text-green-400">col2</span>, <span class="text-green-400">col3</span>)
+<span class="text-purple-400">VALUES</span> (<span class="text-orange-400">'valor1'</span>, <span class="text-orange-400">'valor2'</span>, <span class="text-yellow-400">123</span>);</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ejercicio SQL 3 placeholder -->
+          <div class="rounded-2xl border border-dashed border-blue-200 dark:border-blue-800/60 bg-blue-50/30 dark:bg-blue-950/10 overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-400 dark:text-blue-600 text-xs font-bold">03</span>
+                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Taller SQL 3 – Próximamente</h4>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─────────────────────── -->
+      <!-- PROYECTO                -->
+      <!-- ─────────────────────── -->
+      <div id="proyecto" class="space-y-8 fade-in">
+
+        <div class="flex items-center gap-4">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 text-white shadow-md shadow-indigo-200 dark:shadow-indigo-900/50 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Proyecto Final</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Integración de modelado, normalización y SQL</p>
+          </div>
+        </div>
+
+        <!-- Card principal del proyecto -->
+        <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm">
+
+          <!-- Banner del proyecto -->
+          <div class="px-6 py-8 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+              <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white blur-3xl transform translate-x-16 -translate-y-16"></div>
+              <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white blur-3xl transform -translate-x-12 translate-y-12"></div>
+            </div>
+            <div class="relative">
+              <p class="text-indigo-200 text-xs font-medium uppercase tracking-wider mb-2">Proyecto Final · Bases de Datos 1</p>
+              <h4 class="text-2xl font-bold mb-1">[Nombre del Proyecto]</h4>
+              <p class="text-indigo-100 text-sm">Reemplaza con el nombre real de tu proyecto</p>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-8">
+
+            <!-- Descripción -->
+            <div class="space-y-2">
+              <h5 class="text-sm font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                <span class="w-1.5 h-4 rounded-full bg-indigo-500 inline-block"></span>
+                Descripción del sistema
+              </h5>
+              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed pl-4 border-l border-gray-100 dark:border-gray-800 italic">
+                Escribe aquí la descripción del sistema que desarrollaste: qué problema resuelve,
+                quiénes son los usuarios, cuáles son las entidades principales...
+              </p>
+            </div>
+
+            <!-- Fases del proyecto -->
+            <div class="space-y-3">
+              <h5 class="text-sm font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                <span class="w-1.5 h-4 rounded-full bg-purple-500 inline-block"></span>
+                Fases de desarrollo
+              </h5>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pl-4">
+
+                <div class="relative rounded-xl border border-indigo-100 dark:border-indigo-900/50 bg-indigo-50/50 dark:bg-indigo-950/20 p-4 text-center">
+                  <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-500 text-white text-xs flex items-center justify-center font-bold shadow">1</div>
+                  <p class="text-xs font-semibold text-indigo-700 dark:text-indigo-300 mt-2">Análisis</p>
+                  <p class="text-xs text-gray-400 dark:text-gray-600 mt-1">Requerimientos</p>
+                </div>
+
+                <div class="relative rounded-xl border border-purple-100 dark:border-purple-900/50 bg-purple-50/50 dark:bg-purple-950/20 p-4 text-center">
+                  <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-purple-500 text-white text-xs flex items-center justify-center font-bold shadow">2</div>
+                  <p class="text-xs font-semibold text-purple-700 dark:text-purple-300 mt-2">Modelado</p>
+                  <p class="text-xs text-gray-400 dark:text-gray-600 mt-1">Diagrama ER</p>
+                </div>
+
+                <div class="relative rounded-xl border border-blue-100 dark:border-blue-900/50 bg-blue-50/50 dark:bg-blue-950/20 p-4 text-center">
+                  <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-500 text-white text-xs flex items-center justify-center font-bold shadow">3</div>
+                  <p class="text-xs font-semibold text-blue-700 dark:text-blue-300 mt-2">Normalización</p>
+                  <p class="text-xs text-gray-400 dark:text-gray-600 mt-1">1FN · 2FN · 3FN</p>
+                </div>
+
+                <div class="relative rounded-xl border border-green-100 dark:border-green-900/50 bg-green-50/50 dark:bg-green-950/20 p-4 text-center">
+                  <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-green-500 text-white text-xs flex items-center justify-center font-bold shadow">4</div>
+                  <p class="text-xs font-semibold text-green-700 dark:text-green-300 mt-2">SQL</p>
+                  <p class="text-xs text-gray-400 dark:text-gray-600 mt-1">Implementación</p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Modelo ER del proyecto -->
+            <div class="space-y-3">
+              <h5 class="text-sm font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                <span class="w-1.5 h-4 rounded-full bg-blue-500 inline-block"></span>
+                Modelo Entidad-Relación
+              </h5>
+              <div class="pl-4">
+                <div class="rounded-xl border border-dashed border-indigo-200 dark:border-indigo-800/60 bg-indigo-50/30 dark:bg-indigo-950/10 flex items-center justify-center h-48">
+                  <div class="text-center text-gray-300 dark:text-gray-700">
+                    <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <p class="text-sm font-medium">Coloca aquí la imagen de tu modelo ER</p>
+                    <p class="text-xs mt-1">Guárdala en <code class="text-indigo-400">/public/</code> y usa una etiqueta <code class="text-indigo-400">&lt;img&gt;</code></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SQL del proyecto -->
+            <div class="space-y-3">
+              <h5 class="text-sm font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                <span class="w-1.5 h-4 rounded-full bg-green-500 inline-block"></span>
+                Scripts SQL principales
+              </h5>
+              <div class="pl-4 rounded-xl overflow-hidden border border-gray-800 dark:border-gray-700">
+                <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
+                  <span class="text-xs text-gray-400 font-mono">proyecto_ddl.sql</span>
+                  <div class="flex gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-400/60"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-400/60"></span>
+                  </div>
+                </div>
+                <pre class="bg-gray-950 p-5 overflow-x-auto text-sm leading-relaxed"><code class="language-sql"><span class="text-blue-400">-- Reemplaza con el DDL real de tu proyecto</span>
+<span class="text-purple-400">CREATE TABLE</span> <span class="text-green-400">nombre_tabla</span> (
+  id          <span class="text-yellow-400">INT</span>          <span class="text-purple-400">PRIMARY KEY AUTO_INCREMENT</span>,
+  columna1    <span class="text-yellow-400">VARCHAR</span>(<span class="text-orange-400">100</span>) <span class="text-purple-400">NOT NULL</span>,
+  columna2    <span class="text-yellow-400">DATE</span>,
+  fk_id       <span class="text-yellow-400">INT</span>,
+  <span class="text-purple-400">FOREIGN KEY</span> (fk_id) <span class="text-purple-400">REFERENCES</span> <span class="text-green-400">otra_tabla</span>(id)
+);</code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
     </section>
@@ -178,4 +549,18 @@ import profilePhoto from '../assets/brian.png';
   </main>
 
   <Footer />
+
+  <script>
+    // Scroll fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
 </Layout>
