@@ -118,28 +118,67 @@ import profilePhoto from '../assets/brian.png';
 
         <div class="grid gap-6">
 
-          <!-- Modelo 1 -->
+          <!-- Modelo 1 – Biblioteca -->
           <div class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300">
+
+            <!-- Header -->
             <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div class="flex items-center gap-3">
                 <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold">01</span>
-                <h4 class="font-semibold">Sistema Aerolínea</h4>
+                <h4 class="font-semibold">Sistema Biblioteca</h4>
               </div>
               <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-medium">ER Diagrama</span>
             </div>
+
+            <!-- Enunciado (colapsable) -->
+            <details class="group/det border-b border-gray-100 dark:border-gray-800">
+              <summary class="flex items-center gap-2 px-6 py-3 cursor-pointer select-none text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors list-none">
+                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span class="font-medium">Ver enunciado del ejercicio</span>
+                <svg class="w-3.5 h-3.5 ml-auto transition-transform duration-200 group-open/det:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pt-3 bg-indigo-50/40 dark:bg-indigo-950/20">
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">Enunciado</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  Crear un diseño E/R que permita gestionar los datos de una biblioteca de modo que:
+                </p>
+                <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex gap-2.5">
+                    <span class="mt-1 w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
+                    <span>Las personas socias de la biblioteca disponen de un código de socio y además se necesita almacenar su cédula, dirección, teléfono, nombre y apellidos.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-1 w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
+                    <span>La biblioteca almacena libros que presta a los socios; de ellos se almacena su título, año en el que se escribió, nombre completo del autor (o autores), año en que se editó, editorial e ISBN.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-1 w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
+                    <span>Se necesita poder indicar si un libro en la biblioteca está dañado o no.</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- Imagen del modelo -->
             <div class="p-4 overflow-hidden">
               <div class="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-950 group-hover:scale-[1.01] transition-transform duration-500">
                 <img
                   src="/modelos/modelo1.png"
-                  alt="Modelo Entidad Relación – Sistema Aerolínea"
+                  alt="Modelo Entidad Relación – Sistema Biblioteca"
                   class="w-full object-contain"
                 />
               </div>
             </div>
           </div>
 
-          <!-- Modelo 2 -->
+          <!-- Modelo 2 – Hospital Urgencias -->
           <div class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300">
+
+            <!-- Header -->
             <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div class="flex items-center gap-3">
                 <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold">02</span>
@@ -147,6 +186,41 @@ import profilePhoto from '../assets/brian.png';
               </div>
               <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-medium">ER Diagrama</span>
             </div>
+
+            <!-- Enunciado (colapsable) -->
+            <details class="group/det border-b border-gray-100 dark:border-gray-800">
+              <summary class="flex items-center gap-2 px-6 py-3 cursor-pointer select-none text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors list-none">
+                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span class="font-medium">Ver enunciado del ejercicio</span>
+                <svg class="w-3.5 h-3.5 ml-auto transition-transform duration-200 group-open/det:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pt-3 bg-indigo-50/40 dark:bg-indigo-950/20">
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">Enunciado</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  Crear un diseño E/R que permita gestionar los datos de un Hospital de modo que:
+                </p>
+                <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex gap-2.5">
+                    <span class="mt-1 w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
+                    <span>Los pacientes tienen una cédula, dirección, teléfonos de contacto, nombre y apellidos, fecha de nacimiento y edad.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-1 w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
+                    <span>Los médicos del Hospital también tienen su cédula, nombre completo, especialidad y celular.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-1 w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
+                    <span>Se necesita poder indicar si un paciente ya pasó por Triage (en una fecha) y saber cuál es su nivel de esa evaluación.</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- Imagen del modelo -->
             <div class="p-4 overflow-hidden">
               <div class="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-950 group-hover:scale-[1.01] transition-transform duration-500">
                 <img
@@ -158,21 +232,26 @@ import profilePhoto from '../assets/brian.png';
             </div>
           </div>
 
-          <!-- Modelo 3 — PLACEHOLDER -->
+          <!-- Modelo 3 — PLACEHOLDER (copia este bloque para cada nuevo modelo) -->
           <div class="rounded-2xl border border-dashed border-indigo-200 dark:border-indigo-800/60 bg-indigo-50/40 dark:bg-indigo-950/20 overflow-hidden">
             <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
               <div class="flex items-center gap-3">
                 <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-400 dark:text-indigo-500 text-xs font-bold">03</span>
-                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Modelo 3 – Próximamente</h4>
+                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Modelo 3 – [Nombre del sistema]</h4>
               </div>
               <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
             </div>
-            <div class="flex items-center justify-center h-32 text-gray-300 dark:text-gray-700">
+            <!-- Enunciado placeholder -->
+            <div class="px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
+              <p class="text-xs font-semibold text-gray-300 dark:text-gray-700 uppercase tracking-wider mb-2">Enunciado</p>
+              <p class="text-xs text-gray-300 dark:text-gray-700 italic">Pega aquí el enunciado del ejercicio cuando lo tengas...</p>
+            </div>
+            <div class="flex items-center justify-center h-28 text-gray-300 dark:text-gray-700">
               <div class="text-center">
-                <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-7 h-7 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
                 </svg>
-                <p class="text-xs">Reemplaza esta card con tu próximo modelo</p>
+                <p class="text-xs">Agrega la imagen de tu modelo aquí</p>
               </div>
             </div>
           </div>
