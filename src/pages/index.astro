@@ -232,21 +232,100 @@ import profilePhoto from '../assets/brian.png';
             </div>
           </div>
 
-          <!-- Modelo 3 — PLACEHOLDER (copia este bloque para cada nuevo modelo) -->
+          <!-- Modelo 3 – Los Residuos Tóxicos -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold">03</span>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Sistema de Residuos Tóxicos</h4>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-medium">ER Diagrama</span>
+            </div>
+            <details class="group/det border-b border-gray-100 dark:border-gray-800">
+              <summary class="flex items-center gap-2 px-6 py-3 cursor-pointer select-none text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors list-none">
+                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span class="font-medium">Ver enunciado del ejercicio</span>
+                <svg class="w-3.5 h-3.5 ml-auto transition-transform duration-200 group-open/det:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pt-3 bg-indigo-50/40 dark:bg-indigo-950/20">
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">Enunciado — Los Residuos Tóxicos</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  Se desea abordar la problemática ambiental de los residuos tóxicos y peligrosos cuya incorrecta gestión produce daños de gran importancia en el medio ambiente y en la salud del ser humano. La información contemplada abarca desde que el residuo es producido por una empresa productora hasta que se encuentra en lugar seguro (incineración, almacenamiento en depósitos de seguridad, etc.). Se considera la información de los productores, los residuos, las empresas transportadoras y el traslado teniendo en cuenta el tipo de transporte y el envase.
+                </p>
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">Supuestos semánticos</p>
+                <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">1</span>
+                    <span>Una empresa productora produce un número amplio de residuos constituidos por un número variable de constituyentes químicos.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">2</span>
+                    <span>Más de una empresa productora puede producir residuos con igual número de constituyentes químicos y con las mismas o distintas cantidades.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">3</span>
+                    <span>Las empresas productoras asignan un código único a los residuos que producen. Más de una empresa puede asignar el mismo código a los residuos que produce.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">4</span>
+                    <span>Los residuos pueden ser trasladados en su totalidad, en partes, o no ser trasladados nunca.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">5</span>
+                    <span>En cada traslado la cantidad trasladada es enviada a un único destino.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">6</span>
+                    <span>En una misma fecha las empresas productoras pueden ordenar más de un traslado del mismo o distinto residuo (cantidades parciales) a un mismo o distinto destino.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">7</span>
+                    <span>En cada traslado puede intervenir más de una empresa transportista usando el mismo o distinto transporte; interesa conocer el medio, los kilómetros realizados y el coste.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">8</span>
+                    <span>El residuo se traslada en un tipo de envase determinado por la empresa productora, que no varía a lo largo del traslado.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">9</span>
+                    <span>Es interesante conocer la fecha de llegada a destino y el tratamiento al que se someten los residuos una vez alcanzado el mismo.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.25rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">10</span>
+                    <span>Por seguridad, en un traslado sólo puede trasladarse un residuo de una empresa productora.</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+            <div class="p-4 overflow-hidden">
+              <div class="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-950 group-hover:scale-[1.01] transition-transform duration-500">
+                <img
+                  src="/modelos/modelo_residuos.png"
+                  alt="Modelo Entidad Relación – Sistema de Residuos Tóxicos"
+                  class="w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modelo 4 — PLACEHOLDER -->
           <div class="rounded-2xl border border-dashed border-indigo-200 dark:border-indigo-800/60 bg-indigo-50/40 dark:bg-indigo-950/20 overflow-hidden">
             <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
               <div class="flex items-center gap-3">
-                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-400 dark:text-indigo-500 text-xs font-bold">03</span>
-                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Modelo 3 – [Nombre del sistema]</h4>
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-400 dark:text-indigo-500 text-xs font-bold">04</span>
+                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Modelo 4 – [Nombre del sistema]</h4>
               </div>
               <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
             </div>
-            <!-- Enunciado placeholder -->
             <div class="px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
               <p class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Enunciado</p>
               <p class="text-xs text-gray-400 dark:text-gray-500 italic">Pega aquí el enunciado del ejercicio cuando lo tengas...</p>
             </div>
-            <div class="flex items-center justify-center h-28 text-gray-400 dark:text-gray-500">
+            <div class="flex items-center justify-center h-28 text-gray-300 dark:text-gray-700">
               <div class="text-center">
                 <svg class="w-7 h-7 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
