@@ -355,115 +355,240 @@ import profilePhoto from '../assets/brian.png';
           </div>
         </div>
 
-        <!-- Taller de normalización -->
+        <!-- ── Ejercicio 1 ── -->
         <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm">
 
-          <!-- Header del taller -->
+          <!-- Header -->
           <div class="px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border-b border-gray-100 dark:border-gray-800">
             <div class="flex items-center gap-3">
               <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">01</span>
               <div>
-                <h4 class="font-semibold text-gray-900 dark:text-white">Taller 1 – [Nombre del sistema aquí]</h4>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Reemplaza este título con el nombre real del taller</p>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Ejercicio 1 – Sistema de Empleados y Tareas</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Normalización de tabla de empleados con tareas multivaluadas</p>
               </div>
             </div>
           </div>
 
-          <div class="p-6 space-y-6">
+          <div class="p-6 space-y-8">
 
-            <!-- Tabla sin normalizar -->
+            <!-- ── TABLA ORIGINAL ── -->
             <div class="space-y-3">
               <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-red-400"></span>
-                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300">Tabla original (sin normalizar)</h5>
+                <span class="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Tabla original (sin normalizar)</h5>
+                <span class="ml-auto text-xs px-2 py-0.5 rounded-full bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-900/50">Problema: atributos multivaluados</span>
               </div>
               <div class="overflow-x-auto rounded-xl border border-red-100 dark:border-red-900/40">
                 <table class="w-full text-sm text-left">
-                  <thead class="bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300">
+                  <thead class="bg-red-50 dark:bg-red-950/30">
                     <tr>
-                      <th class="px-4 py-2.5 font-medium">Columna A</th>
-                      <th class="px-4 py-2.5 font-medium">Columna B</th>
-                      <th class="px-4 py-2.5 font-medium">Columna C</th>
-                      <th class="px-4 py-2.5 font-medium">Columna D</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300">IdEmpleado</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300">Cedula</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300">NombreEmpleado</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900/40">TareaAsignada ⚠</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300">LugardeTrabajo</th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-red-50 dark:divide-red-900/20 text-gray-500 dark:text-gray-500 italic">
+                  <tbody class="divide-y divide-red-50 dark:divide-red-900/20 text-gray-700 dark:text-gray-300">
                     <tr class="bg-white dark:bg-gray-900">
-                      <td class="px-4 py-2.5">dato1</td>
-                      <td class="px-4 py-2.5">dato2</td>
-                      <td class="px-4 py-2.5">dato3</td>
-                      <td class="px-4 py-2.5">dato4</td>
+                      <td class="px-4 py-2.5 font-mono text-xs">1</td>
+                      <td class="px-4 py-2.5 font-mono text-xs">1234</td>
+                      <td class="px-4 py-2.5">Juan Pachanga</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">Optimizar software, Crear Sistema</td>
+                      <td class="px-4 py-2.5">Riosucio</td>
                     </tr>
-                    <tr class="bg-red-50/30 dark:bg-red-950/10">
-                      <td class="px-4 py-2.5">dato1</td>
-                      <td class="px-4 py-2.5">dato2b</td>
-                      <td class="px-4 py-2.5">dato3</td>
-                      <td class="px-4 py-2.5">dato4b</td>
+                    <tr class="bg-gray-50/50 dark:bg-gray-800/30">
+                      <td class="px-4 py-2.5 font-mono text-xs">2</td>
+                      <td class="px-4 py-2.5 font-mono text-xs">321</td>
+                      <td class="px-4 py-2.5">Juanito Alimaña</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-gray-600 dark:text-gray-400">Capacitar empleados</td>
+                      <td class="px-4 py-2.5">Amagá</td>
+                    </tr>
+                    <tr class="bg-white dark:bg-gray-900">
+                      <td class="px-4 py-2.5 font-mono text-xs">3</td>
+                      <td class="px-4 py-2.5 font-mono text-xs">4567</td>
+                      <td class="px-4 py-2.5">Pablo Pueblo</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">Diseñar bdd, Cambiar logo empresa</td>
+                      <td class="px-4 py-2.5">Cañasgordas</td>
+                    </tr>
+                    <tr class="bg-gray-50/50 dark:bg-gray-800/30">
+                      <td class="px-4 py-2.5 font-mono text-xs">4</td>
+                      <td class="px-4 py-2.5 font-mono text-xs">789</td>
+                      <td class="px-4 py-2.5">Pedro Navaja</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">Crear reportes, Soporte técnico</td>
+                      <td class="px-4 py-2.5">Yarumal</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <p class="text-xs text-gray-400 dark:text-gray-600 italic">↑ Reemplaza con tu tabla original sin normalizar</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400 pl-1">
+                La columna <span class="font-semibold text-red-500">TareaAsignada</span> contiene múltiples valores en una sola celda → viola la atomicidad (1FN).
+              </p>
             </div>
 
-            <!-- Progresión de formas normales -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-              <!-- 1FN -->
-              <div class="rounded-xl border border-yellow-200 dark:border-yellow-900/40 bg-yellow-50/50 dark:bg-yellow-950/20 p-4 space-y-2">
-                <div class="flex items-center gap-2">
-                  <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center">1</span>
-                  <span class="text-xs font-bold text-yellow-700 dark:text-yellow-400">Primera Forma Normal</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-gray-600 italic">
-                  Describe aquí los cambios aplicados para llegar a 1FN: eliminar grupos repetitivos, atributos atómicos...
-                </p>
-                <div class="mt-2 pt-2 border-t border-yellow-100 dark:border-yellow-900/30">
-                  <p class="text-xs text-gray-400 dark:text-gray-500 italic">→ Agrega tu tabla 1FN aquí</p>
-                </div>
+            <!-- ── FLECHA ── -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800">
+                <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center">1</span>
+                <span class="text-xs font-semibold text-yellow-700 dark:text-yellow-400">Primera Forma Normal (1FN)</span>
               </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+            </div>
 
-              <!-- 2FN -->
-              <div class="rounded-xl border border-blue-200 dark:border-blue-900/40 bg-blue-50/50 dark:bg-blue-950/20 p-4 space-y-2">
-                <div class="flex items-center gap-2">
-                  <span class="w-5 h-5 rounded-md bg-blue-200 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center justify-center">2</span>
-                  <span class="text-xs font-bold text-blue-700 dark:text-blue-400">Segunda Forma Normal</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-gray-600 italic">
-                  Describe aquí los cambios para 2FN: eliminar dependencias parciales respecto a la llave primaria...
-                </p>
-                <div class="mt-2 pt-2 border-t border-blue-100 dark:border-blue-900/30">
-                  <p class="text-xs text-gray-400 dark:text-gray-500 italic">→ Agrega tu tabla 2FN aquí</p>
-                </div>
+            <!-- ── 1FN ── -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Hacia 1FN — Atributos atómicos</h5>
+                <span class="ml-auto text-xs px-2 py-0.5 rounded-full bg-yellow-50 dark:bg-yellow-950/40 text-yellow-700 dark:text-yellow-400 border border-yellow-100 dark:border-yellow-900/50">Se duplican filas</span>
               </div>
-
-              <!-- 3FN -->
-              <div class="rounded-xl border border-green-200 dark:border-green-900/40 bg-green-50/50 dark:bg-green-950/20 p-4 space-y-2">
-                <div class="flex items-center gap-2">
-                  <span class="w-5 h-5 rounded-md bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-bold flex items-center justify-center">3</span>
-                  <span class="text-xs font-bold text-green-700 dark:text-green-400">Tercera Forma Normal</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-gray-600 italic">
-                  Describe aquí los cambios para 3FN: eliminar dependencias transitivas...
-                </p>
-                <div class="mt-2 pt-2 border-t border-green-100 dark:border-green-900/30">
-                  <p class="text-xs text-gray-400 dark:text-gray-500 italic">→ Agrega tu tabla 3FN aquí</p>
-                </div>
+              <p class="text-xs text-gray-500 dark:text-gray-400 pl-1">
+                Cada tarea pasa a ser una fila independiente. <span class="font-medium text-gray-700 dark:text-gray-300">IdEmpleado + TareaAsignada</span> forman la llave primaria compuesta.
+              </p>
+              <div class="overflow-x-auto rounded-xl border border-yellow-100 dark:border-yellow-900/40">
+                <table class="w-full text-sm text-left">
+                  <thead class="bg-yellow-50 dark:bg-yellow-950/30">
+                    <tr>
+                      <th class="px-4 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300 underline decoration-dotted">IdEmpleado 🔑</th>
+                      <th class="px-4 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">Cedula</th>
+                      <th class="px-4 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">NombreEmpleado</th>
+                      <th class="px-4 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300 underline decoration-dotted">TareaAsignada 🔑</th>
+                      <th class="px-4 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">LugardeTrabajo</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-yellow-50 dark:divide-yellow-900/20 text-gray-700 dark:text-gray-300">
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-4 py-2 font-mono text-xs">1</td><td class="px-4 py-2 font-mono text-xs">1234</td><td class="px-4 py-2">Juan Pachanga</td><td class="px-4 py-2">Optimizar software</td><td class="px-4 py-2">Riosucio</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-4 py-2 font-mono text-xs">1</td><td class="px-4 py-2 font-mono text-xs">1234</td><td class="px-4 py-2">Juan Pachanga</td><td class="px-4 py-2">Crear Sistema</td><td class="px-4 py-2">Riosucio</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-4 py-2 font-mono text-xs">2</td><td class="px-4 py-2 font-mono text-xs">321</td><td class="px-4 py-2">Juanito Alimaña</td><td class="px-4 py-2">Capacitar empleados</td><td class="px-4 py-2">Amagá</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-4 py-2 font-mono text-xs">3</td><td class="px-4 py-2 font-mono text-xs">4567</td><td class="px-4 py-2">Pablo Pueblo</td><td class="px-4 py-2">Diseñar bdd</td><td class="px-4 py-2">Cañasgordas</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-4 py-2 font-mono text-xs">3</td><td class="px-4 py-2 font-mono text-xs">4567</td><td class="px-4 py-2">Pablo Pueblo</td><td class="px-4 py-2">Cambiar logo empresa</td><td class="px-4 py-2">Cañasgordas</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-4 py-2 font-mono text-xs">4</td><td class="px-4 py-2 font-mono text-xs">789</td><td class="px-4 py-2">Pedro Navaja</td><td class="px-4 py-2">Crear reportes</td><td class="px-4 py-2">Yarumal</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-4 py-2 font-mono text-xs">4</td><td class="px-4 py-2 font-mono text-xs">789</td><td class="px-4 py-2">Pedro Navaja</td><td class="px-4 py-2">Soporte técnico</td><td class="px-4 py-2">Yarumal</td></tr>
+                  </tbody>
+                </table>
               </div>
+            </div>
 
+            <!-- ── FLECHA ── -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-green-300 dark:via-green-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800">
+                <span class="w-5 h-5 rounded-md bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-bold flex items-center justify-center">3</span>
+                <span class="text-xs font-semibold text-green-700 dark:text-green-400">Tercera Forma Normal (3FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-green-300 dark:via-green-700 to-transparent"></div>
+            </div>
+
+            <!-- ── 3FN: 3 tablas ── -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">3FN — Tres tablas independientes</h5>
+              </div>
+              <p class="text-xs text-gray-500 dark:text-gray-400 pl-1">
+                Se eliminan dependencias transitivas. <span class="font-medium text-gray-700 dark:text-gray-300">Cedula</span> y <span class="font-medium text-gray-700 dark:text-gray-300">NombreEmpleado</span> dependen solo del empleado, no de la tarea. La tabla intermedia <span class="font-medium text-gray-700 dark:text-gray-300">Empleado-Tarea</span> resuelve la relación N:M.
+              </p>
+
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                <!-- Tabla Empleado -->
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-wider">Empleado</span>
+                    <span class="text-xs text-gray-400 dark:text-gray-500">— entidad principal</span>
+                  </div>
+                  <div class="rounded-xl overflow-hidden border border-green-100 dark:border-green-900/40">
+                    <table class="w-full text-sm text-left">
+                      <thead class="bg-green-50 dark:bg-green-950/30">
+                        <tr>
+                          <th class="px-3 py-2.5 font-semibold text-green-700 dark:text-green-300 text-xs">IdEmpleado 🔑</th>
+                          <th class="px-3 py-2.5 font-semibold text-green-700 dark:text-green-300 text-xs">Cedula</th>
+                          <th class="px-3 py-2.5 font-semibold text-green-700 dark:text-green-300 text-xs">NombreEmpleado</th>
+                          <th class="px-3 py-2.5 font-semibold text-green-700 dark:text-green-300 text-xs">LugardeTrabajo</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-green-50 dark:divide-green-900/20 text-gray-700 dark:text-gray-300">
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono text-xs">1</td><td class="px-3 py-2 font-mono text-xs">1234</td><td class="px-3 py-2 text-xs">Juan Pachanga</td><td class="px-3 py-2 text-xs">Riosucio</td></tr>
+                        <tr class="bg-green-50/20 dark:bg-green-950/10"><td class="px-3 py-2 font-mono text-xs">2</td><td class="px-3 py-2 font-mono text-xs">321</td><td class="px-3 py-2 text-xs">Juanito Alimaña</td><td class="px-3 py-2 text-xs">Amagá</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono text-xs">3</td><td class="px-3 py-2 font-mono text-xs">4567</td><td class="px-3 py-2 text-xs">Pablo Pueblo</td><td class="px-3 py-2 text-xs">Cañasgordas</td></tr>
+                        <tr class="bg-green-50/20 dark:bg-green-950/10"><td class="px-3 py-2 font-mono text-xs">4</td><td class="px-3 py-2 font-mono text-xs">789</td><td class="px-3 py-2 text-xs">Pedro Navaja</td><td class="px-3 py-2 text-xs">Yarumal</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Tabla Empleado-Tarea -->
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">Empleado-Tarea</span>
+                    <span class="text-xs text-gray-400 dark:text-gray-500">— tabla intermedia</span>
+                  </div>
+                  <div class="rounded-xl overflow-hidden border border-blue-100 dark:border-blue-900/40">
+                    <table class="w-full text-sm text-left">
+                      <thead class="bg-blue-50 dark:bg-blue-950/30">
+                        <tr>
+                          <th class="px-3 py-2.5 font-semibold text-blue-700 dark:text-blue-300 text-xs">IdEmpleado 🔑</th>
+                          <th class="px-3 py-2.5 font-semibold text-blue-700 dark:text-blue-300 text-xs">IdTarea 🔑</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-blue-50 dark:divide-blue-900/20 text-gray-700 dark:text-gray-300 font-mono text-xs">
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2">1</td><td class="px-3 py-2">1</td></tr>
+                        <tr class="bg-blue-50/20 dark:bg-blue-950/10"><td class="px-3 py-2">1</td><td class="px-3 py-2">2</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2">2</td><td class="px-3 py-2">3</td></tr>
+                        <tr class="bg-blue-50/20 dark:bg-blue-950/10"><td class="px-3 py-2">3</td><td class="px-3 py-2">4</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2">3</td><td class="px-3 py-2">5</td></tr>
+                        <tr class="bg-blue-50/20 dark:bg-blue-950/10"><td class="px-3 py-2">4</td><td class="px-3 py-2">6</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2">4</td><td class="px-3 py-2">7</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Tabla Tarea -->
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-purple-700 dark:text-purple-400 uppercase tracking-wider">Tarea</span>
+                    <span class="text-xs text-gray-400 dark:text-gray-500">— catálogo</span>
+                  </div>
+                  <div class="rounded-xl overflow-hidden border border-purple-100 dark:border-purple-900/40">
+                    <table class="w-full text-sm text-left">
+                      <thead class="bg-purple-50 dark:bg-purple-950/30">
+                        <tr>
+                          <th class="px-3 py-2.5 font-semibold text-purple-700 dark:text-purple-300 text-xs">IdTarea 🔑</th>
+                          <th class="px-3 py-2.5 font-semibold text-purple-700 dark:text-purple-300 text-xs">TareaAsignada</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-purple-50 dark:divide-purple-900/20 text-gray-700 dark:text-gray-300">
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono text-xs">1</td><td class="px-3 py-2 text-xs">Optimizar software</td></tr>
+                        <tr class="bg-purple-50/20 dark:bg-purple-950/10"><td class="px-3 py-2 font-mono text-xs">2</td><td class="px-3 py-2 text-xs">Crear Sistema</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono text-xs">3</td><td class="px-3 py-2 text-xs">Capacitar empleados</td></tr>
+                        <tr class="bg-purple-50/20 dark:bg-purple-950/10"><td class="px-3 py-2 font-mono text-xs">4</td><td class="px-3 py-2 text-xs">Diseñar bdd</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono text-xs">5</td><td class="px-3 py-2 text-xs">Cambiar logo empresa</td></tr>
+                        <tr class="bg-purple-50/20 dark:bg-purple-950/10"><td class="px-3 py-2 font-mono text-xs">6</td><td class="px-3 py-2 text-xs">Crear reportes</td></tr>
+                        <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono text-xs">7</td><td class="px-3 py-2 text-xs">Soporte técnico</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Taller 2 placeholder -->
+        <!-- ── Ejercicio 2 — Placeholder ── -->
         <div class="rounded-2xl border border-dashed border-purple-200 dark:border-purple-800/60 bg-purple-50/30 dark:bg-purple-950/10 overflow-hidden">
-          <div class="flex items-center justify-between px-6 py-4">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-purple-200 dark:border-purple-800/60">
             <div class="flex items-center gap-3">
               <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-400 dark:text-purple-600 text-xs font-bold">02</span>
-              <h4 class="font-semibold text-gray-400 dark:text-gray-600">Taller 2 – Próximamente</h4>
+              <h4 class="font-semibold text-gray-400 dark:text-gray-600">Ejercicio 2 – [Nombre del sistema]</h4>
             </div>
             <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
+          </div>
+          <div class="flex items-center justify-center h-20 text-gray-300 dark:text-gray-700">
+            <p class="text-xs">Comparte el Excel del próximo ejercicio para agregarlo aquí</p>
           </div>
         </div>
 
