@@ -312,25 +312,121 @@ import profilePhoto from '../assets/brian.png';
             </div>
           </div>
 
-          <!-- Modelo 4 — PLACEHOLDER -->
-          <div class="rounded-2xl border border-dashed border-indigo-200 dark:border-indigo-800/60 bg-indigo-50/40 dark:bg-indigo-950/20 overflow-hidden">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
+          <!-- Modelo 4 – Eat'n Go · Comidas Rápidas -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300">
+
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div class="flex items-center gap-3">
-                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-400 dark:text-indigo-500 text-xs font-bold">04</span>
-                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Modelo 4 – [Nombre del sistema]</h4>
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold">04</span>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Sistema Eat'n Go – Franquicia de Comidas Rápidas</h4>
               </div>
-              <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-medium">ER Diagrama</span>
             </div>
-            <div class="px-6 py-4 border-b border-dashed border-indigo-200 dark:border-indigo-800/60">
-              <p class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Enunciado</p>
-              <p class="text-xs text-gray-400 dark:text-gray-500 italic">Pega aquí el enunciado del ejercicio cuando lo tengas...</p>
-            </div>
-            <div class="flex items-center justify-center h-28 text-gray-300 dark:text-gray-700">
-              <div class="text-center">
-                <svg class="w-7 h-7 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
+
+            <!-- Enunciado colapsable -->
+            <details class="group/det border-b border-gray-100 dark:border-gray-800">
+              <summary class="flex items-center gap-2 px-6 py-3 cursor-pointer select-none text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors list-none">
+                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-                <p class="text-xs">Agrega la imagen de tu modelo aquí</p>
+                <span class="font-medium">Ver enunciado del ejercicio</span>
+                <svg class="w-3.5 h-3.5 ml-auto transition-transform duration-200 group-open/det:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+
+              <div class="px-6 pb-5 pt-3 bg-indigo-50/40 dark:bg-indigo-950/20">
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">Enunciado — Eat'n Go · Franquicia de Comidas Rápidas</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  Eat'n Go, una empresa internacional dedicada a la comercialización de comidas rápidas, tiene la intención de ubicar una franquicia en nuestra localidad, siendo necesario informatizar la gestión del negocio adaptándolo a las características propias de la clientela esperada. La empresa se dedica a la venta de pizzas y bocadillos, además de productos complementarios como refrescos, helados, etc.
+                </p>
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-3">Supuestos semánticos</p>
+                <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+                    <span>Tanto las pizzas como los bocadillos pueden condimentarse con un número de ingredientes de entre un conjunto de ellos con los que trabaja la empresa.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+                    <span>Los ingredientes con los que se hacen los bocadillos pueden ser iguales o distintos a aquellos con los que se hacen las pizzas.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+                    <span>El número de ingredientes que intervienen en un artículo puede ser cero; es decir, la empresa vende también las bases de las pizzas y el pan para los bocadillos sin ingredientes.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
+                    <span>Cada artículo (pizza, bocadillo o complementario) tiene un precio base asignado cuando se vende de forma independiente, sin contar los ingredientes que puedan acompañarlo.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">5</span>
+                    <span>Cada ingrediente tiene un precio para los bocadillos; para las pizzas todos los ingredientes tienen el mismo precio. Los complementarios no llevan ingredientes.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">6</span>
+                    <span>Los artículos se pueden vender en distinto tamaño (pequeño, normal y grande), siendo el precio base y el precio de los ingredientes distintos según el tamaño.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">7</span>
+                    <span>Las ventas se pueden hacer de tres formas: para consumir en el local, para recoger en el local, y para servir a domicilio (con cargo adicional por el porte).</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">8</span>
+                    <span>Los artículos complementarios tienen un precio fijo en base a su tipo, tamaño, sabor, etc.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">9</span>
+                    <span>Los clientes pueden solicitar un pedido tanto presencialmente en el local como telefónicamente.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">10</span>
+                    <span>En pedidos telefónicos se toman los datos completos del cliente (cédula y nombre). En pedidos para consumo en el local no se toman datos salvo que sea necesario.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">11</span>
+                    <span>A la empresa le interesa mantener información de todos los clientes: para escala informativa/marketing y para favorecer mediante obsequios a clientes que alcancen cierto consumo.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">12</span>
+                    <span>La empresa organiza promociones basadas en: (1) unidades consumidas de pizzas o bocadillos, y (2) cargo total acumulado en los pedidos.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">12+1</span>
+                    <span>Cuando se obsequia una promoción, la empresa recaba la información del cliente y mantiene registro de los regalos entregados para evitar duplicados.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">14</span>
+                    <span>La empresa cuenta con repartidores y scooters para domicilios. Cada reparto se asigna a un repartidor con un scooter; un mismo scooter puede usarse por distintos repartidores en distintos turnos.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">15</span>
+                    <span>Le interesa conocer el costo de los scooters basado en el consumo de gasolina durante los repartos.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">16</span>
+                    <span>Los precios de todos los artículos tienen el IVA incluido.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">17</span>
+                    <span>En pedidos a domicilio existe un valor mínimo de pedido. Si el valor de los artículos no alcanza ese mínimo, se cobra el mínimo al cliente.</span>
+                  </li>
+                  <li class="flex gap-2.5">
+                    <span class="mt-0.5 min-w-[1.4rem] h-5 rounded-md bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold flex-shrink-0">18</span>
+                    <span>La empresa cuenta con pizzas y bocadillos <em>estrellas</em>, formados por ingredientes predeterminados con nombre comercial único y precio igual al acumulado de sus ingredientes.</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- Imagen -->
+            <div class="p-4 overflow-hidden">
+              <div class="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-950 group-hover:scale-[1.01] transition-transform duration-500">
+                <img
+                  src="/modelos/modelo_comidas.png"
+                  alt="Modelo Entidad Relación – Eat'n Go · Franquicia de Comidas Rápidas"
+                  class="w-full object-contain"
+                />
               </div>
             </div>
           </div>
