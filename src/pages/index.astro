@@ -1483,21 +1483,392 @@ import profilePhoto from '../assets/brian.png';
           </div>
         </div>
 
-        <!-- ── Ejercicio 5 — Placeholder ── -->
-        <div class="rounded-2xl border border-dashed border-purple-200 dark:border-purple-800/60 bg-purple-50/30 dark:bg-purple-950/10 overflow-hidden">
-          <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-purple-200 dark:border-purple-800/60">
+        <!-- ── Ejercicio 5 ── -->
+        <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm">
+          <div class="px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border-b border-gray-100 dark:border-gray-800">
             <div class="flex items-center gap-3">
-              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-400 dark:text-purple-600 text-xs font-bold">05</span>
-              <h4 class="font-semibold text-gray-400 dark:text-gray-600">Ejercicio 5 – [Nombre del sistema]</h4>
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">05</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Taller Avanzado – Ej. 1: Sistema de Envío Internacional (LOGISTIC SYSTEMS)</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">44 atributos → 1FN → 2FN → 3FN · 10 tablas resultantes</p>
+              </div>
             </div>
-            <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
           </div>
-          <div class="flex items-center justify-center h-20 text-gray-300 dark:text-gray-700">
-            <p class="text-xs">Comparte el Excel del próximo ejercicio para agregarlo aquí</p>
+          <div class="p-6 space-y-8">
+
+            <!-- Enunciado -->
+            <div class="rounded-xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 p-4 space-y-2">
+              <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Enunciado — LOGISTIC SYSTEMS S.A.S.</p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">La empresa presta servicios de envío puerta a puerta entre ciudades y países. Cada guía puede amparar varios paquetes, es despachada por un empleado (conductor) en un vehículo determinado, y va asociada a un plan tarifario según la zona de destino. El sistema también registra eventos de rastreo (recogida, tránsito, aduana, entrega) y el medio de pago del remitente. Toda la información está en una única relación sin normalizar.</p>
+              <div class="text-xs text-gray-600 dark:text-gray-400 pt-2 border-t border-indigo-100 dark:border-indigo-900/40 space-y-0.5">
+                <p>• Identificar la llave primaria compuesta y justificarla.</p>
+                <p>• Indicar en qué forma normal está la relación inicial.</p>
+                <p>• Aplicar 1FN (eliminar grupos repetidos de paquetes y eventos), 2FN (dependencias parciales) y 3FN (dependencias transitivas).</p>
+              </div>
+            </div>
+
+            <!-- Esquema original -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Relación original ENVIO (sin normalizar)</h5>
+                <span class="ml-auto text-xs px-2 py-0.5 rounded-full bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-900/50">Grupos repetidos: paquetes + eventos</span>
+              </div>
+              <div class="rounded-xl bg-red-50/40 dark:bg-red-950/15 border border-red-100 dark:border-red-900/40 p-4">
+                <p class="text-xs font-mono text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <span class="text-red-600 dark:text-red-400 font-bold">ENVIO</span>(<span class="underline decoration-dotted">num_guia</span>, fecha_guia, hora_guia,
+                  orgn_nit, orgn_nombre, orgn_actividad, orgn_ciudad, orgn_pais, orgn_direccion, orgn_telefono, orgn_celular,
+                  dest_id, dest_nombre, dest_cod_ciudad, dest_ciudad, dest_pais, dest_direccion, dest_telefono, dest_km_desde_origen,
+                  cod_zona, nombre_zona, tarifa_base_zona,
+                  cod_empleado, nombre_empleado, licencia_empleado,
+                  placa_vehiculo, tipo_vehiculo, capacidad_vehiculo,
+                  <span class="text-red-500 font-semibold">cod_paquete*, tipo_paquete, nombre_paquete, descripcion_paquete, peso_paquete, valor_declarado, cant_unidades, valor_flete_paquete,</span>
+                  <span class="text-red-500 font-semibold">cod_evento*, fecha_evento, estado_evento, descripcion_evento,</span>
+                  cod_pago, metodo_pago, valor_pagado)
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">* = grupos repetidos que violan 1FN</p>
+              </div>
+            </div>
+
+            <!-- 1FN -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800">
+                <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center">1</span>
+                <span class="text-xs font-semibold text-yellow-700 dark:text-yellow-400">Primera Forma Normal (1FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">1FN — PK compuesta: num_guia + cod_paquete + cod_evento</h5>
+              </div>
+              <div class="rounded-xl bg-yellow-50/40 dark:bg-yellow-950/15 border border-yellow-100 dark:border-yellow-900/40 p-4">
+                <p class="text-xs font-mono text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <span class="text-yellow-700 dark:text-yellow-400 font-bold">ENVIO</span>(<span class="underline decoration-dotted font-semibold">num_guia, cod_paquete, cod_evento</span>, fecha_guia, hora_guia,
+                  orgn_nit, orgn_nombre, orgn_actividad, orgn_ciudad, orgn_pais, orgn_direccion, orgn_telefono, orgn_celular,
+                  dest_id, dest_nombre, dest_cod_ciudad, dest_ciudad, dest_pais, dest_direccion, dest_telefono, dest_km_desde_origen,
+                  cod_zona, nombre_zona, tarifa_base_zona, cod_empleado, nombre_empleado, licencia_empleado,
+                  placa_vehiculo, tipo_vehiculo, capacidad_vehiculo,
+                  tipo_paquete, nombre_paquete, descripcion_paquete, peso_paquete, valor_declarado, cant_unidades, valor_flete_paquete,
+                  fecha_evento, estado_evento, descripcion_evento,
+                  cod_pago, metodo_pago, valor_pagado)
+                </p>
+              </div>
+            </div>
+
+            <!-- 2FN -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
+                <span class="w-5 h-5 rounded-md bg-blue-200 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center justify-center">2</span>
+                <span class="text-xs font-semibold text-blue-700 dark:text-blue-400">Segunda Forma Normal (2FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">2FN — Se eliminan dependencias parciales → 3 tablas</h5>
+              </div>
+              <div class="rounded-xl bg-blue-50/40 dark:bg-blue-950/15 border border-blue-100 dark:border-blue-900/40 p-4 space-y-1 text-xs text-gray-500 dark:text-gray-400">
+                <p>• Attrs de evento dependen de <code class="bg-white dark:bg-gray-800 px-1 rounded">(num_guia, cod_paquete, cod_evento)</code> → <strong>EVENTO</strong></p>
+                <p>• Attrs de paquete dependen solo de <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_paquete</code> → <strong>PAQUETE</strong></p>
+                <p>• El resto depende de <code class="bg-white dark:bg-gray-800 px-1 rounded">num_guia</code> → <strong>GUIA</strong></p>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-blue-100 dark:border-blue-900/40 p-3 space-y-1.5">
+                  <p class="text-xs font-bold text-blue-700 dark:text-blue-400">EVENTO</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400 leading-relaxed"><span class="underline decoration-dotted">num_guia</span>, <span class="underline decoration-dotted">cod_evento</span>, <span class="underline decoration-dotted">cod_paquete</span>, fecha_evento, estado_evento, descripcion_evento</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900/40 p-3 space-y-1.5">
+                  <p class="text-xs font-bold text-indigo-700 dark:text-indigo-400">PAQUETE</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400 leading-relaxed"><span class="underline decoration-dotted">cod_paquete</span>, num_guia FK, tipo_paquete, nombre_paquete, descripcion_paquete, peso_paquete, valor_declarado, cant_unidades, valor_flete_paquete</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-purple-100 dark:border-purple-900/40 p-3 space-y-1.5">
+                  <p class="text-xs font-bold text-purple-700 dark:text-purple-400">GUIA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400 leading-relaxed"><span class="underline decoration-dotted">num_guia</span>, fecha_guia, hora_guia, orgn_nit, orgn_nombre, orgn_actividad, orgn_ciudad, orgn_pais, orgn_direccion, orgn_telefono, orgn_celular, dest_id, dest_nombre, dest_cod_ciudad, dest_ciudad, dest_pais, dest_direccion, dest_telefono, dest_km_desde_origen, cod_zona, nombre_zona, tarifa_base_zona, cod_empleado, nombre_empleado, licencia_empleado, placa_vehiculo, tipo_vehiculo, capacidad_vehiculo, cod_pago, metodo_pago, valor_pagado</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3FN -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-green-300 dark:via-green-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800">
+                <span class="w-5 h-5 rounded-md bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-bold flex items-center justify-center">3</span>
+                <span class="text-xs font-semibold text-green-700 dark:text-green-400">Tercera Forma Normal (3FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-green-300 dark:via-green-700 to-transparent"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">3FN — Se eliminan dependencias transitivas en GUIA</h5>
+              </div>
+              <div class="rounded-xl bg-green-50/40 dark:bg-green-950/15 border border-green-100 dark:border-green-900/40 p-4 space-y-1 text-xs text-gray-500 dark:text-gray-400">
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">orgn_nit</code> → todos los campos <code>orgn_*</code> → <strong>REMITENTE</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">dest_id</code> → datos del destinatario → <strong>DESTINATARIO</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">dest_cod_ciudad</code> → ciudad, país, km, zona → <strong>CIUDAD</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_zona</code> → nombre_zona, tarifa_base → <strong>ZONA</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_empleado</code> → nombre, licencia → <strong>EMPLEADO</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">placa_vehiculo</code> → tipo, capacidad → <strong>VEHICULO</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_pago</code> → metodo, valor → <strong>PAGO</strong></p>
+              </div>
+            </div>
+
+            <!-- Resumen final -->
+            <div class="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 p-5 space-y-4">
+              <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Resultado final — 10 tablas en 3FN</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-purple-100 dark:border-purple-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-purple-700 dark:text-purple-400">GUIA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">num_guia</span>, fecha_guia, hora_guia, orgn_nit FK, dest_id FK, cod_empleado FK, placa_vehiculo FK, cod_pago FK</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-blue-100 dark:border-blue-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-blue-700 dark:text-blue-400">EVENTO</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">num_guia FK, cod_evento, cod_paquete FK</span>, fecha_evento, estado_evento, descripcion_evento</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-indigo-700 dark:text-indigo-400">PAQUETE</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_paquete</span>, num_guia FK, tipo_paquete, nombre_paquete, descripcion_paquete, peso_paquete, valor_declarado, cant_unidades, valor_flete_paquete</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-orange-100 dark:border-orange-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-orange-700 dark:text-orange-400">REMITENTE</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">orgn_nit</span>, orgn_nombre, orgn_actividad, orgn_ciudad, orgn_pais, orgn_direccion, orgn_telefono, orgn_celular</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-teal-100 dark:border-teal-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-teal-700 dark:text-teal-400">DESTINATARIO</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">dest_id</span>, dest_nombre, dest_cod_ciudad FK, dest_direccion, dest_telefono</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-cyan-100 dark:border-cyan-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-cyan-700 dark:text-cyan-400">CIUDAD</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">dest_cod_ciudad</span>, dest_ciudad, dest_pais, dest_km_desde_origen, cod_zona FK</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-yellow-100 dark:border-yellow-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-yellow-700 dark:text-yellow-400">ZONA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_zona</span>, nombre_zona, tarifa_base_zona</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-green-100 dark:border-green-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-green-700 dark:text-green-400">EMPLEADO</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_empleado</span>, nombre_empleado, licencia_empleado</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-slate-100 dark:border-slate-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-slate-700 dark:text-slate-400">VEHICULO</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">placa_vehiculo</span>, tipo_vehiculo, capacidad_vehiculo</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-rose-100 dark:border-rose-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-rose-700 dark:text-rose-400">PAGO</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_pago</span>, metodo_pago, valor_pagado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Ejercicio 6 ── -->
+        <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm">
+          <div class="px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border-b border-gray-100 dark:border-gray-800">
+            <div class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">06</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Taller Avanzado – Ej. 2: Sistema Integral de Video Club (STREAM&GO)</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">36 atributos · grupos repetidos anidados → 1FN → 2FN → 3FN · 11 tablas resultantes</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 space-y-8">
+
+            <!-- Enunciado -->
+            <div class="rounded-xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 p-4 space-y-2">
+              <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Enunciado — STREAM&GO</p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">La cadena STREAM&GO administra varios locales que alquilan películas en DVD y Blu-ray. Cada película puede tener varias copias físicas (casetes), varios actores con roles distintos, un director y una o más categorías. Los clientes se afilian con una membresía que determina un plan tarifario. Cada alquiler registra los casetes entregados, fechas de préstamo/devolución y recargos por mora.</p>
+              <div class="text-xs text-gray-600 dark:text-gray-400 pt-2 border-t border-indigo-100 dark:border-indigo-900/40 space-y-0.5">
+                <p>• Llave primaria compuesta mínima: <code class="bg-white dark:bg-gray-800 px-1 rounded">(cod_alquiler, cod_cassette, cod_actor, cod_categoria)</code></p>
+                <p>• Grupos repetidos: casetes por alquiler + actores por película + categorías por película</p>
+                <p>• Mínimo 9 tablas esperadas en el resultado final</p>
+              </div>
+            </div>
+
+            <!-- Esquema original -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Relación original ALQUILER (sin normalizar)</h5>
+                <span class="ml-auto text-xs px-2 py-0.5 rounded-full bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-900/50">Grupos repetidos anidados</span>
+              </div>
+              <div class="rounded-xl bg-red-50/40 dark:bg-red-950/15 border border-red-100 dark:border-red-900/40 p-4">
+                <p class="text-xs font-mono text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <span class="text-red-600 dark:text-red-400 font-bold">ALQUILER</span>(cod_alquiler, fecha_alquiler, num_membresia, cod_cliente, nom_cliente, dir_cliente, tel_cliente, email_cliente, cod_plan, nombre_plan, tarifa_dia_plan, dias_prestamo_max, cod_sucursal, nombre_sucursal, direccion_sucursal, ciudad_sucursal,
+                  <span class="text-red-500 font-semibold">cod_cassette*, formato_cassette, estado_cassette, cod_pelicula, titulo_pelicula, anio_pelicula, cod_director, nombre_director, nacionalidad_director,</span>
+                  <span class="text-red-500 font-semibold">cod_categoria*, nombre_categoria, recargo_categoria,</span>
+                  <span class="text-red-500 font-semibold">cod_actor*, nombre_actor, fecha_nac_actor, rol_en_pelicula,</span>
+                  fecha_prog_dev, fecha_real_dev, dias_retraso, recargo_mora)
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">* = grupos repetidos · cod_pelicula depende transitivamente de cod_cassette</p>
+              </div>
+            </div>
+
+            <!-- 1FN -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800">
+                <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center">1</span>
+                <span class="text-xs font-semibold text-yellow-700 dark:text-yellow-400">Primera Forma Normal (1FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">1FN — PK compuesta: cod_alquiler + cod_cassette + cod_actor + cod_categoria</h5>
+              </div>
+              <div class="rounded-xl bg-yellow-50/40 dark:bg-yellow-950/15 border border-yellow-100 dark:border-yellow-900/40 p-4">
+                <p class="text-xs font-mono text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <span class="text-yellow-700 dark:text-yellow-400 font-bold">ALQUILER</span>(<span class="underline decoration-dotted font-semibold">cod_alquiler, cod_cassette, cod_actor, cod_categoria</span>, fecha_alquiler, num_membresia, cod_cliente, nom_cliente, dir_cliente, tel_cliente, email_cliente, cod_plan, nombre_plan, tarifa_dia_plan, dias_prestamo_max, cod_sucursal, nombre_sucursal, direccion_sucursal, ciudad_sucursal, formato_cassette, estado_cassette, cod_pelicula, titulo_pelicula, anio_pelicula, cod_director, nombre_director, nacionalidad_director, nombre_categoria, recargo_categoria, nombre_actor, fecha_nac_actor, rol_en_pelicula, fecha_prog_dev, fecha_real_dev, dias_retraso, recargo_mora)
+                </p>
+              </div>
+            </div>
+
+            <!-- 2FN -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
+                <span class="w-5 h-5 rounded-md bg-blue-200 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center justify-center">2</span>
+                <span class="text-xs font-semibold text-blue-700 dark:text-blue-400">Segunda Forma Normal (2FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">2FN — Se eliminan dependencias parciales → 7 tablas</h5>
+              </div>
+              <div class="rounded-xl bg-blue-50/40 dark:bg-blue-950/15 border border-blue-100 dark:border-blue-900/40 p-4 space-y-1 text-xs text-gray-500 dark:text-gray-400">
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_alquiler</code> → fecha, membresía, cliente, plan, sucursal → <strong>ALQUILER</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_cassette</code> → formato, estado, película → <strong>CASETE</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_pelicula</code> → título, año, director(+nombre+nac), → <strong>PELICULA</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_actor</code> → nombre, fecha_nac → <strong>ACTOR</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_categoria</code> → nombre, recargo → <strong>CATEGORIA</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">(cod_pelicula, cod_actor)</code> → rol_en_pelicula → <strong>PELICULA_ACTOR</strong></p>
+                <p>• <code class="bg-white dark:bg-gray-800 px-1 rounded">(cod_alquiler, cod_cassette)</code> → fechas, días, mora → <strong>DETALLE_ALQUILER</strong></p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-blue-100 dark:border-blue-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-blue-700 dark:text-blue-400">ALQUILER</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_alquiler</span>, fecha_alquiler, num_membresia, cod_cliente, nom_cliente, dir_cliente, tel_cliente, email_cliente, cod_plan, nombre_plan, tarifa_dia_plan, dias_prestamo_max, cod_sucursal, nombre_sucursal, direccion_sucursal, ciudad_sucursal</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-indigo-700 dark:text-indigo-400">CASETE</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_cassette</span>, cod_pelicula FK, formato_cassette, estado_cassette</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-purple-100 dark:border-purple-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-purple-700 dark:text-purple-400">PELICULA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_pelicula</span>, titulo_pelicula, anio_pelicula, cod_director, nombre_director, nacionalidad_director</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-teal-100 dark:border-teal-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-teal-700 dark:text-teal-400">ACTOR</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_actor</span>, nombre_actor, fecha_nac_actor</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-orange-100 dark:border-orange-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-orange-700 dark:text-orange-400">CATEGORIA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_categoria</span>, nombre_categoria, recargo_categoria</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-rose-100 dark:border-rose-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-rose-700 dark:text-rose-400">PELICULA_ACTOR</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_pelicula FK, cod_actor FK</span>, rol_en_pelicula</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-green-100 dark:border-green-900/40 p-3 space-y-1 sm:col-span-2 lg:col-span-1">
+                  <p class="text-xs font-bold text-green-700 dark:text-green-400">DETALLE_ALQUILER</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_alquiler FK, cod_cassette FK</span>, fecha_prog_dev, fecha_real_dev, dias_retraso, recargo_mora</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3FN -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-green-300 dark:via-green-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800">
+                <span class="w-5 h-5 rounded-md bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-bold flex items-center justify-center">3</span>
+                <span class="text-xs font-semibold text-green-700 dark:text-green-400">Tercera Forma Normal (3FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-green-300 dark:via-green-700 to-transparent"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">3FN — Dependencias transitivas en ALQUILER y PELICULA</h5>
+              </div>
+              <div class="rounded-xl bg-green-50/40 dark:bg-green-950/15 border border-green-100 dark:border-green-900/40 p-4 space-y-1 text-xs text-gray-500 dark:text-gray-400">
+                <p>• En <strong>ALQUILER</strong>: <code class="bg-white dark:bg-gray-800 px-1 rounded">num_membresia → cod_cliente</code>; <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_cliente</code> → datos del cliente → <strong>CLIENTE</strong></p>
+                <p>• En <strong>ALQUILER</strong>: <code class="bg-white dark:bg-gray-800 px-1 rounded">num_membresia → cod_plan</code>; <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_plan</code> → datos del plan → <strong>PLAN</strong></p>
+                <p>• En <strong>ALQUILER</strong>: <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_sucursal</code> → nombre, dirección, ciudad → <strong>SUCURSAL</strong></p>
+                <p>• En <strong>PELICULA</strong>: <code class="bg-white dark:bg-gray-800 px-1 rounded">cod_director</code> → nombre_director, nacionalidad_director → <strong>DIRECTOR</strong></p>
+              </div>
+            </div>
+
+            <!-- Resumen final -->
+            <div class="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 p-5 space-y-4">
+              <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Resultado final — 11 tablas en 3FN</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-blue-100 dark:border-blue-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-blue-700 dark:text-blue-400">ALQUILER</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_alquiler</span>, cod_cliente FK, cod_plan FK, cod_sucursal FK, fecha_alquiler, num_membresia</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-sky-100 dark:border-sky-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-sky-700 dark:text-sky-400">CLIENTE</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_cliente</span>, nom_cliente, dir_cliente, tel_cliente, email_cliente</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-violet-100 dark:border-violet-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-violet-700 dark:text-violet-400">PLAN</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_plan</span>, nombre_plan, tarifa_dia_plan, dias_prestamo_max</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-slate-100 dark:border-slate-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-slate-700 dark:text-slate-400">SUCURSAL</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_sucursal</span>, nombre_sucursal, direccion_sucursal, ciudad_sucursal</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-green-100 dark:border-green-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-green-700 dark:text-green-400">DETALLE_ALQUILER</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_alquiler FK, cod_cassette FK</span>, fecha_prog_dev, fecha_real_dev, dias_retraso, recargo_mora</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-indigo-700 dark:text-indigo-400">CASETE</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_cassette</span>, cod_pelicula FK, formato_cassette, estado_cassette</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-purple-100 dark:border-purple-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-purple-700 dark:text-purple-400">PELICULA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_pelicula</span>, titulo_pelicula, anio_pelicula, cod_director FK</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-fuchsia-100 dark:border-fuchsia-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-fuchsia-700 dark:text-fuchsia-400">DIRECTOR</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_director</span>, nombre_director, nacionalidad_director</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-teal-100 dark:border-teal-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-teal-700 dark:text-teal-400">ACTOR</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_actor</span>, nombre_actor, fecha_nac_actor</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-orange-100 dark:border-orange-900/40 p-3 space-y-1">
+                  <p class="text-xs font-bold text-orange-700 dark:text-orange-400">CATEGORIA</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_categoria</span>, nombre_categoria, recargo_categoria</p>
+                </div>
+                <div class="rounded-lg bg-white dark:bg-gray-900 border border-rose-100 dark:border-rose-900/40 p-3 space-y-1 sm:col-span-2 lg:col-span-1">
+                  <p class="text-xs font-bold text-rose-700 dark:text-rose-400">PELICULA_ACTOR</p>
+                  <p class="text-xs font-mono text-gray-500 dark:text-gray-400"><span class="underline decoration-dotted">cod_pelicula FK, cod_actor FK</span>, rol_en_pelicula</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
+
       <!-- SQL                     -->
       <!-- ─────────────────────── -->
       <div id="sql" class="space-y-8 fade-in">
