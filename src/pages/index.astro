@@ -575,6 +575,82 @@ import profilePhoto from '../assets/brian.png';
               </div>
             </div>
 
+            <!-- ── Resumen final Ejercicio 1 ── -->
+            <div class="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 p-5 space-y-4">
+              <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Resultado final — 3 tablas en 3FN</p>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                <!-- Empleado final -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                    <span class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-wider">Empleado</span>
+                  </div>
+                  <div class="rounded-lg overflow-hidden border border-green-100 dark:border-green-900/40 text-xs">
+                    <div class="bg-green-50 dark:bg-green-950/30 px-3 py-2 font-mono text-green-700 dark:text-green-300 grid grid-cols-4 gap-2">
+                      <span class="underline decoration-dotted">IdEmpleado 🔑</span><span>Cedula</span><span>Nombre</span><span>Lugar</span>
+                    </div>
+                    <div class="divide-y divide-green-50 dark:divide-green-900/20 text-gray-600 dark:text-gray-400">
+                      <div class="px-3 py-1.5 grid grid-cols-4 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">1</span><span class="font-mono">1234</span><span>Juan P.</span><span>Riosucio</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-4 gap-2 bg-green-50/20 dark:bg-green-950/10"><span class="font-mono">2</span><span class="font-mono">321</span><span>Juanito A.</span><span>Amagá</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-4 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">3</span><span class="font-mono">4567</span><span>Pablo P.</span><span>Cañasgordas</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-4 gap-2 bg-green-50/20 dark:bg-green-950/10"><span class="font-mono">4</span><span class="font-mono">789</span><span>Pedro N.</span><span>Yarumal</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Empleado-Tarea final -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    <span class="text-xs font-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">Empleado-Tarea</span>
+                  </div>
+                  <div class="rounded-lg overflow-hidden border border-blue-100 dark:border-blue-900/40 text-xs">
+                    <div class="bg-blue-50 dark:bg-blue-950/30 px-3 py-2 font-mono text-blue-700 dark:text-blue-300 grid grid-cols-2 gap-2">
+                      <span class="underline decoration-dotted">IdEmpleado 🔑</span><span class="underline decoration-dotted">IdTarea 🔑</span>
+                    </div>
+                    <div class="divide-y divide-blue-50 dark:divide-blue-900/20 text-gray-600 dark:text-gray-400 font-mono">
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span>1</span><span>1</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-blue-50/20 dark:bg-blue-950/10"><span>1</span><span>2</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span>2</span><span>3</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-blue-50/20 dark:bg-blue-950/10"><span>3</span><span>4</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span>3</span><span>5</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-blue-50/20 dark:bg-blue-950/10"><span>4</span><span>6</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span>4</span><span>7</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tarea final -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    <span class="text-xs font-bold text-purple-700 dark:text-purple-400 uppercase tracking-wider">Tarea</span>
+                  </div>
+                  <div class="rounded-lg overflow-hidden border border-purple-100 dark:border-purple-900/40 text-xs">
+                    <div class="bg-purple-50 dark:bg-purple-950/30 px-3 py-2 font-mono text-purple-700 dark:text-purple-300 grid grid-cols-2 gap-2">
+                      <span class="underline decoration-dotted">IdTarea 🔑</span><span>TareaAsignada</span>
+                    </div>
+                    <div class="divide-y divide-purple-50 dark:divide-purple-900/20 text-gray-600 dark:text-gray-400">
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">1</span><span>Optimizar software</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span class="font-mono">2</span><span>Crear Sistema</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">3</span><span>Capacitar empleados</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span class="font-mono">4</span><span>Diseñar bdd</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">5</span><span>Cambiar logo empresa</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span class="font-mono">6</span><span>Crear reportes</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-2 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">7</span><span>Soporte técnico</span></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="text-xs px-2.5 py-1 rounded-lg bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-mono">Empleado (IdEmpleado, Cedula, NombreEmpleado, LugardeTrabajo)</span>
+                <span class="text-xs px-2.5 py-1 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono">Empleado-Tarea (IdEmpleado 🔑, IdTarea 🔑)</span>
+                <span class="text-xs px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-mono">Tarea (IdTarea, TareaAsignada)</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -866,12 +942,213 @@ import profilePhoto from '../assets/brian.png';
           </div>
         </div>
 
-        <!-- ── Ejercicio 3 — Placeholder ── -->
+        <!-- ── Ejercicio 3 ── -->
+        <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm">
+
+          <!-- Header -->
+          <div class="px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border-b border-gray-100 dark:border-gray-800">
+            <div class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">03</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Ejercicio 3 – Sistema de Estudiantes y Cursos</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Normalización a 1FN: grupos repetitivos en Courses y GradePoints</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-8">
+
+            <!-- Enunciado -->
+            <div class="rounded-xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 p-4 space-y-3">
+              <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Enunciado</p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                Dada la tabla de Estudiantes: a) ¿La tabla está en 1NF? ¿Por qué? b) Si no está en 1NF, rediseñe las tablas para que toda la información se encuentre en las tablas resultantes y estas estén en 1NF. Para cada tabla resultante, proporcione el nombre, los nombres de las columnas, las llaves primarias y las llaves foráneas.
+              </p>
+            </div>
+
+            <!-- ── TABLA ORIGINAL ── -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Tabla original (sin normalizar)</h5>
+                <span class="ml-auto text-xs px-2 py-0.5 rounded-full bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-900/50">Problema: Courses y GradePoints multivaluados</span>
+              </div>
+              <div class="overflow-x-auto rounded-xl border border-red-100 dark:border-red-900/40">
+                <table class="w-full text-sm text-left">
+                  <thead class="bg-red-50 dark:bg-red-950/30">
+                    <tr>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300 text-xs">Cod 🔑</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300 text-xs">Name</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300 text-xs">Email</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300 text-xs bg-red-100 dark:bg-red-900/40">Courses ⚠</th>
+                      <th class="px-4 py-2.5 font-semibold text-red-700 dark:text-red-300 text-xs bg-red-100 dark:bg-red-900/40">GradePoints ⚠</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-red-50 dark:divide-red-900/20 text-gray-700 dark:text-gray-300 text-xs">
+                    <tr class="bg-white dark:bg-gray-900">
+                      <td class="px-4 py-2.5 font-mono">100111</td><td class="px-4 py-2.5">John Doe</td><td class="px-4 py-2.5">doe@usna.edu</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">NN204, SI204, IT221</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">2, 3, 3</td>
+                    </tr>
+                    <tr class="bg-red-50/10 dark:bg-red-950/5">
+                      <td class="px-4 py-2.5 font-mono">92244</td><td class="px-4 py-2.5">Matt Smith</td><td class="px-4 py-2.5">smith@usna.edu</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">SM223, EE301</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">4, 4</td>
+                    </tr>
+                    <tr class="bg-white dark:bg-gray-900">
+                      <td class="px-4 py-2.5 font-mono">113221</td><td class="px-4 py-2.5">Melinda Black</td><td class="px-4 py-2.5">black@usna.edu</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-gray-600 dark:text-gray-400">SI204</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-gray-600 dark:text-gray-400">3</td>
+                    </tr>
+                    <tr class="bg-red-50/10 dark:bg-red-950/5">
+                      <td class="px-4 py-2.5 font-mono">90112</td><td class="px-4 py-2.5">Tom Johnson</td><td class="px-4 py-2.5">Johnson@usna.edu</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">NN204, SI204, IT221</td>
+                      <td class="px-4 py-2.5 bg-red-50/60 dark:bg-red-950/20 text-red-700 dark:text-red-300 font-medium">4, 2, 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-xs text-gray-500 dark:text-gray-400 pl-1">
+                <span class="text-red-500 font-semibold">No está en 1FN</span>: las columnas <span class="font-medium">Courses</span> y <span class="font-medium">GradePoints</span> contienen múltiples valores separados por comas → viola la atomicidad.
+              </p>
+            </div>
+
+            <!-- ── FLECHA 1FN ── -->
+            <div class="flex items-center gap-3">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800">
+                <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center">1</span>
+                <span class="text-xs font-semibold text-yellow-700 dark:text-yellow-400">Primera Forma Normal (1FN)</span>
+              </div>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-300 dark:via-yellow-700 to-transparent"></div>
+            </div>
+
+            <!-- ── 1FN expandida ── -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0"></span>
+                <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">1FN — Una fila por cada curso</h5>
+              </div>
+              <p class="text-xs text-gray-500 dark:text-gray-400 pl-1">
+                Se descomponen los valores multivaluados. La llave primaria compuesta es <span class="font-semibold text-gray-700 dark:text-gray-300">Cod + Courses</span>.
+              </p>
+              <div class="overflow-x-auto rounded-xl border border-yellow-100 dark:border-yellow-900/40">
+                <table class="w-full text-xs text-left">
+                  <thead class="bg-yellow-50 dark:bg-yellow-950/30">
+                    <tr>
+                      <th class="px-3 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">Cod 🔑</th>
+                      <th class="px-3 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">Name</th>
+                      <th class="px-3 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">Email</th>
+                      <th class="px-3 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">Courses 🔑</th>
+                      <th class="px-3 py-2.5 font-semibold text-yellow-700 dark:text-yellow-300">GradePoints</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-yellow-50 dark:divide-yellow-900/20 text-gray-700 dark:text-gray-300">
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono">100111</td><td class="px-3 py-2">John Doe</td><td class="px-3 py-2">doe@usna.edu</td><td class="px-3 py-2 font-mono">NN204</td><td class="px-3 py-2 font-mono">2</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-3 py-2 font-mono">100111</td><td class="px-3 py-2">John Doe</td><td class="px-3 py-2">doe@usna.edu</td><td class="px-3 py-2 font-mono">SI204</td><td class="px-3 py-2 font-mono">3</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono">100111</td><td class="px-3 py-2">John Doe</td><td class="px-3 py-2">doe@usna.edu</td><td class="px-3 py-2 font-mono">IT221</td><td class="px-3 py-2 font-mono">3</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-3 py-2 font-mono">92244</td><td class="px-3 py-2">Matt Smith</td><td class="px-3 py-2">smith@usna.edu</td><td class="px-3 py-2 font-mono">SM223</td><td class="px-3 py-2 font-mono">4</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono">92244</td><td class="px-3 py-2">Matt Smith</td><td class="px-3 py-2">smith@usna.edu</td><td class="px-3 py-2 font-mono">EE301</td><td class="px-3 py-2 font-mono">4</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-3 py-2 font-mono">113221</td><td class="px-3 py-2">Melinda Black</td><td class="px-3 py-2">black@usna.edu</td><td class="px-3 py-2 font-mono">SI204</td><td class="px-3 py-2 font-mono">3</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono">90112</td><td class="px-3 py-2">Tom Johnson</td><td class="px-3 py-2">Johnson@usna.edu</td><td class="px-3 py-2 font-mono">NN204</td><td class="px-3 py-2 font-mono">4</td></tr>
+                    <tr class="bg-yellow-50/20 dark:bg-yellow-950/10"><td class="px-3 py-2 font-mono">90112</td><td class="px-3 py-2">Tom Johnson</td><td class="px-3 py-2">Johnson@usna.edu</td><td class="px-3 py-2 font-mono">SI204</td><td class="px-3 py-2 font-mono">2</td></tr>
+                    <tr class="bg-white dark:bg-gray-900"><td class="px-3 py-2 font-mono">90112</td><td class="px-3 py-2">Tom Johnson</td><td class="px-3 py-2">Johnson@usna.edu</td><td class="px-3 py-2 font-mono">IT221</td><td class="px-3 py-2 font-mono">3</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- ── Resumen final Ejercicio 3 ── -->
+            <div class="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 p-5 space-y-4">
+              <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Resultado final — 3 tablas en 1FN</p>
+              <div class="rounded-xl bg-blue-50/40 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <p>• <span class="font-semibold text-blue-700 dark:text-blue-300">Name, Email</span> dependen solo de <code class="bg-white dark:bg-gray-800 px-1 rounded">Cod</code> → tabla <strong>Estudiante</strong></p>
+                <p>• <span class="font-semibold text-blue-700 dark:text-blue-300">Courses</span> es una entidad propia → tabla <strong>Curso</strong></p>
+                <p>• <span class="font-semibold text-blue-700 dark:text-blue-300">GradePoints</span> depende de la combinación <code class="bg-white dark:bg-gray-800 px-1 rounded">Cod + Courses</code> → tabla intermedia <strong>Estudiante-Curso</strong></p>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                <!-- Estudiante -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                    <span class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-wider">Estudiante</span>
+                  </div>
+                  <div class="rounded-lg overflow-hidden border border-green-100 dark:border-green-900/40 text-xs">
+                    <div class="bg-green-50 dark:bg-green-950/30 px-3 py-2 font-semibold text-green-700 dark:text-green-300 grid grid-cols-3 gap-2">
+                      <span class="underline decoration-dotted">Cod 🔑</span><span>Name</span><span>Email</span>
+                    </div>
+                    <div class="divide-y divide-green-50 dark:divide-green-900/20 text-gray-600 dark:text-gray-400">
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">100111</span><span>John Doe</span><span class="truncate text-gray-400">doe@…</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-green-50/20 dark:bg-green-950/10"><span class="font-mono">92244</span><span>Matt Smith</span><span class="truncate text-gray-400">smith@…</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span class="font-mono">113221</span><span>Melinda B.</span><span class="truncate text-gray-400">black@…</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-green-50/20 dark:bg-green-950/10"><span class="font-mono">90112</span><span>Tom Johnson</span><span class="truncate text-gray-400">Johnson@…</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Curso -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                    <span class="text-xs font-bold text-indigo-700 dark:text-indigo-400 uppercase tracking-wider">Curso</span>
+                  </div>
+                  <div class="rounded-lg overflow-hidden border border-indigo-100 dark:border-indigo-900/40 text-xs">
+                    <div class="bg-indigo-50 dark:bg-indigo-950/30 px-3 py-2 font-semibold text-indigo-700 dark:text-indigo-300">
+                      <span class="underline decoration-dotted">Courses 🔑</span>
+                    </div>
+                    <div class="divide-y divide-indigo-50 dark:divide-indigo-900/20 text-gray-600 dark:text-gray-400 font-mono">
+                      <div class="px-3 py-1.5 bg-white dark:bg-gray-900">NN204</div>
+                      <div class="px-3 py-1.5 bg-indigo-50/20 dark:bg-indigo-950/10">SI204</div>
+                      <div class="px-3 py-1.5 bg-white dark:bg-gray-900">IT221</div>
+                      <div class="px-3 py-1.5 bg-indigo-50/20 dark:bg-indigo-950/10">SM223</div>
+                      <div class="px-3 py-1.5 bg-white dark:bg-gray-900">EE301</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Estudiante-Curso -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    <span class="text-xs font-bold text-purple-700 dark:text-purple-400 uppercase tracking-wider">Estudiante-Curso</span>
+                  </div>
+                  <div class="rounded-lg overflow-hidden border border-purple-100 dark:border-purple-900/40 text-xs">
+                    <div class="bg-purple-50 dark:bg-purple-950/30 px-3 py-2 font-semibold text-purple-700 dark:text-purple-300 grid grid-cols-3 gap-2">
+                      <span class="underline decoration-dotted">Courses 🔑</span><span class="underline decoration-dotted">Cod 🔑</span><span>GradePoints</span>
+                    </div>
+                    <div class="divide-y divide-purple-50 dark:divide-purple-900/20 text-gray-600 dark:text-gray-400 font-mono">
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span>NN204</span><span>100111</span><span>2</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span>SI204</span><span>100111</span><span>3</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span>IT221</span><span>100111</span><span>3</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span>SM223</span><span>92244</span><span>4</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span>EE301</span><span>92244</span><span>4</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span>SI204</span><span>113221</span><span>3</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span>NN204</span><span>90112</span><span>4</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-purple-50/20 dark:bg-purple-950/10"><span>SI204</span><span>90112</span><span>2</span></div>
+                      <div class="px-3 py-1.5 grid grid-cols-3 gap-2 bg-white dark:bg-gray-900"><span>IT221</span><span>90112</span><span>3</span></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="text-xs px-2.5 py-1 rounded-lg bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-mono">Estudiante (Cod 🔑, Name, Email)</span>
+                <span class="text-xs px-2.5 py-1 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-mono">Curso (Courses 🔑)</span>
+                <span class="text-xs px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-mono">Estudiante-Curso (Courses 🔑, Cod 🔑, GradePoints)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Ejercicio 4 — Placeholder ── -->
         <div class="rounded-2xl border border-dashed border-purple-200 dark:border-purple-800/60 bg-purple-50/30 dark:bg-purple-950/10 overflow-hidden">
           <div class="flex items-center justify-between px-6 py-4 border-b border-dashed border-purple-200 dark:border-purple-800/60">
             <div class="flex items-center gap-3">
-              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-400 dark:text-purple-600 text-xs font-bold">03</span>
-              <h4 class="font-semibold text-gray-400 dark:text-gray-600">Ejercicio 3 – [Nombre del sistema]</h4>
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-400 dark:text-purple-600 text-xs font-bold">04</span>
+              <h4 class="font-semibold text-gray-400 dark:text-gray-600">Ejercicio 4 – [Nombre del sistema]</h4>
             </div>
             <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
           </div>
@@ -879,8 +1156,6 @@ import profilePhoto from '../assets/brian.png';
             <p class="text-xs">Comparte el Excel del próximo ejercicio para agregarlo aquí</p>
           </div>
         </div>
-
-      </div>
 
       <!-- ─────────────────────── -->
       <!-- SQL                     -->
