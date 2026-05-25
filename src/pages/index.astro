@@ -1887,82 +1887,376 @@ import profilePhoto from '../assets/brian.png';
 
         <div class="space-y-6">
 
-          <!-- Ejercicio SQL 1 -->
+          <!-- Ejercicio SQL 1 — DDL -->
           <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-blue-50 dark:hover:shadow-blue-900/20 transition-all duration-300">
             <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div class="flex items-center gap-3">
                 <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold">01</span>
-                <h4 class="font-semibold text-gray-900 dark:text-white">Taller SQL – [Nombre del ejercicio aquí]</h4>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">Ejemplo DDL – Creación de tablas</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Data Definition Language: estructurar la base de datos</p>
+                </div>
               </div>
               <div class="flex gap-2">
-                <span class="text-xs px-2 py-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono font-medium">SELECT</span>
-                <span class="text-xs px-2 py-1 rounded-md bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-mono font-medium">JOIN</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 font-mono font-medium">CREATE</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono font-medium">PRIMARY KEY</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-mono font-medium">FK</span>
               </div>
             </div>
             <div class="p-4 space-y-3">
-              <p class="text-sm text-gray-500 dark:text-gray-400 px-2">
-                Descripción del ejercicio: qué se busca resolver con esta consulta.
-                Reemplaza este texto con la explicación real.
+              <p class="text-sm text-gray-600 dark:text-gray-400 px-2">
+                DDL (<em>Data Definition Language</em>) define la estructura de la base de datos: tablas, columnas, tipos de datos y restricciones. El ejemplo crea un esquema sencillo de biblioteca con dos tablas relacionadas mediante llave foránea.
               </p>
-              <!-- Bloque de código -->
               <div class="rounded-xl overflow-hidden border border-gray-800 dark:border-gray-700">
                 <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
-                  <span class="text-xs text-gray-400 font-mono">query_01.sql</span>
+                  <span class="text-xs text-gray-400 font-mono">ddl_biblioteca.sql</span>
                   <div class="flex gap-1.5">
                     <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
                     <span class="w-3 h-3 rounded-full bg-yellow-400/60"></span>
                     <span class="w-3 h-3 rounded-full bg-green-400/60"></span>
                   </div>
                 </div>
-                <pre class="bg-gray-950 p-5 overflow-x-auto text-sm leading-relaxed"><code class="language-sql"><span class="text-blue-400">-- Reemplaza con tu consulta SQL real</span>
-<span class="text-purple-400">SELECT</span>  <span class="text-green-400">columna1</span>, <span class="text-green-400">columna2</span>
-<span class="text-purple-400">FROM</span>    tabla
-<span class="text-purple-400">WHERE</span>   condicion <span class="text-yellow-400">=</span> <span class="text-orange-400">'valor'</span>
-<span class="text-purple-400">ORDER BY</span> columna1 <span class="text-purple-400">ASC</span>;</code></pre>
+                <pre class="bg-gray-950 p-5 overflow-x-auto text-xs leading-relaxed"><code><span class="text-blue-400">-- DDL: Crear tabla de socios</span>
+<span class="text-purple-400">CREATE TABLE</span> <span class="text-green-400">SOCIO</span> (
+    cod_socio     <span class="text-yellow-400">NUMBER</span>(<span class="text-orange-400">6</span>)       <span class="text-purple-400">PRIMARY KEY</span>,
+    cedula        <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">15</span>)  <span class="text-purple-400">NOT NULL UNIQUE</span>,
+    nombre        <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">100</span>) <span class="text-purple-400">NOT NULL</span>,
+    apellidos     <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">100</span>) <span class="text-purple-400">NOT NULL</span>,
+    direccion     <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">200</span>),
+    telefono      <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">20</span>),
+    fecha_ingreso <span class="text-yellow-400">DATE</span>          <span class="text-purple-400">DEFAULT</span> <span class="text-cyan-400">SYSDATE</span> <span class="text-purple-400">NOT NULL</span>
+);
+
+<span class="text-blue-400">-- DDL: Crear tabla de préstamos (referencia a SOCIO)</span>
+<span class="text-purple-400">CREATE TABLE</span> <span class="text-green-400">PRESTAMO</span> (
+    cod_prestamo  <span class="text-yellow-400">NUMBER</span>(<span class="text-orange-400">8</span>)       <span class="text-purple-400">PRIMARY KEY</span>,
+    cod_socio     <span class="text-yellow-400">NUMBER</span>(<span class="text-orange-400">6</span>)       <span class="text-purple-400">NOT NULL</span>,
+    isbn          <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">20</span>)  <span class="text-purple-400">NOT NULL</span>,
+    titulo_libro  <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">200</span>) <span class="text-purple-400">NOT NULL</span>,
+    fecha_prestamo <span class="text-yellow-400">DATE</span>         <span class="text-purple-400">DEFAULT</span> <span class="text-cyan-400">SYSDATE</span>,
+    fecha_devolucion <span class="text-yellow-400">DATE</span>,
+    estado        <span class="text-yellow-400">VARCHAR2</span>(<span class="text-orange-400">20</span>)  <span class="text-purple-400">DEFAULT</span> <span class="text-orange-400">'ACTIVO'</span>
+                                    <span class="text-purple-400">CHECK</span> (estado <span class="text-purple-400">IN</span> (<span class="text-orange-400">'ACTIVO'</span>, <span class="text-orange-400">'DEVUELTO'</span>, <span class="text-orange-400">'VENCIDO'</span>)),
+    <span class="text-blue-400">-- Llave foránea: vincula préstamo con socio existente</span>
+    <span class="text-purple-400">CONSTRAINT</span> fk_prestamo_socio
+        <span class="text-purple-400">FOREIGN KEY</span> (cod_socio)
+        <span class="text-purple-400">REFERENCES</span> <span class="text-green-400">SOCIO</span>(cod_socio)
+        <span class="text-purple-400">ON DELETE CASCADE</span>
+);</code></pre>
+              </div>
+              <!-- Conceptos clave -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 px-2">
+                <div class="rounded-lg bg-violet-50 dark:bg-violet-950/30 border border-violet-100 dark:border-violet-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-violet-700 dark:text-violet-400 font-mono">PRIMARY KEY</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Identifica cada fila de forma única</p>
+                </div>
+                <div class="rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-blue-700 dark:text-blue-400 font-mono">NOT NULL</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">El campo no puede quedar vacío</p>
+                </div>
+                <div class="rounded-lg bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-indigo-700 dark:text-indigo-400 font-mono">FOREIGN KEY</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Referencia a otra tabla</p>
+                </div>
+                <div class="rounded-lg bg-cyan-50 dark:bg-cyan-950/30 border border-cyan-100 dark:border-cyan-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-cyan-700 dark:text-cyan-400 font-mono">CHECK</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Valida valores permitidos</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Ejercicio SQL 2 -->
+          <!-- Ejercicio SQL 2 — DML -->
           <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-blue-50 dark:hover:shadow-blue-900/20 transition-all duration-300">
             <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div class="flex items-center gap-3">
                 <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold">02</span>
-                <h4 class="font-semibold text-gray-900 dark:text-white">Taller SQL – [Nombre del ejercicio aquí]</h4>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">Ejemplo DML – Inserción, consulta y actualización</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Data Manipulation Language: operar sobre los datos</p>
+                </div>
               </div>
               <div class="flex gap-2">
                 <span class="text-xs px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-mono font-medium">INSERT</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono font-medium">SELECT</span>
                 <span class="text-xs px-2 py-1 rounded-md bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 font-mono font-medium">UPDATE</span>
               </div>
             </div>
             <div class="p-4 space-y-3">
-              <p class="text-sm text-gray-500 dark:text-gray-400 px-2">
-                Descripción del ejercicio. Reemplaza este texto con la explicación real.
+              <p class="text-sm text-gray-600 dark:text-gray-400 px-2">
+                DML (<em>Data Manipulation Language</em>) permite insertar, consultar, modificar y eliminar datos dentro de las tablas creadas con DDL. Continuando con el ejemplo de biblioteca:
               </p>
               <div class="rounded-xl overflow-hidden border border-gray-800 dark:border-gray-700">
                 <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
-                  <span class="text-xs text-gray-400 font-mono">query_02.sql</span>
+                  <span class="text-xs text-gray-400 font-mono">dml_biblioteca.sql</span>
                   <div class="flex gap-1.5">
                     <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
                     <span class="w-3 h-3 rounded-full bg-yellow-400/60"></span>
                     <span class="w-3 h-3 rounded-full bg-green-400/60"></span>
                   </div>
                 </div>
-                <pre class="bg-gray-950 p-5 overflow-x-auto text-sm leading-relaxed"><code class="language-sql"><span class="text-blue-400">-- Reemplaza con tu consulta SQL real</span>
-<span class="text-purple-400">INSERT INTO</span> tabla (<span class="text-green-400">col1</span>, <span class="text-green-400">col2</span>, <span class="text-green-400">col3</span>)
-<span class="text-purple-400">VALUES</span> (<span class="text-orange-400">'valor1'</span>, <span class="text-orange-400">'valor2'</span>, <span class="text-yellow-400">123</span>);</code></pre>
+                <pre class="bg-gray-950 p-5 overflow-x-auto text-xs leading-relaxed"><code><span class="text-blue-400">-- INSERT: Agregar socios</span>
+<span class="text-purple-400">INSERT INTO</span> <span class="text-green-400">SOCIO</span> (cod_socio, cedula, nombre, apellidos, telefono)
+<span class="text-purple-400">VALUES</span> (<span class="text-orange-400">1001</span>, <span class="text-orange-400">'1234567'</span>, <span class="text-orange-400">'Ana'</span>, <span class="text-orange-400">'García'</span>, <span class="text-orange-400">'310-555-0001'</span>);
+
+<span class="text-purple-400">INSERT INTO</span> <span class="text-green-400">SOCIO</span> (cod_socio, cedula, nombre, apellidos, telefono)
+<span class="text-purple-400">VALUES</span> (<span class="text-orange-400">1002</span>, <span class="text-orange-400">'7654321'</span>, <span class="text-orange-400">'Carlos'</span>, <span class="text-orange-400">'López'</span>, <span class="text-orange-400">'320-555-0002'</span>);
+
+<span class="text-blue-400">-- INSERT: Registrar un préstamo</span>
+<span class="text-purple-400">INSERT INTO</span> <span class="text-green-400">PRESTAMO</span> (cod_prestamo, cod_socio, isbn, titulo_libro, fecha_devolucion)
+<span class="text-purple-400">VALUES</span> (<span class="text-orange-400">5001</span>, <span class="text-orange-400">1001</span>, <span class="text-orange-400">'978-0-06-112008-4'</span>, <span class="text-orange-400">'To Kill a Mockingbird'</span>,
+        <span class="text-cyan-400">SYSDATE</span> <span class="text-yellow-400">+</span> <span class="text-orange-400">14</span>);
+
+<span class="text-blue-400">-- SELECT: Listar préstamos activos con nombre del socio</span>
+<span class="text-purple-400">SELECT</span>
+    p.cod_prestamo,
+    s.nombre <span class="text-yellow-400">||</span> <span class="text-orange-400">' '</span> <span class="text-yellow-400">||</span> s.apellidos  <span class="text-purple-400">AS</span> socio,
+    p.titulo_libro,
+    p.fecha_prestamo,
+    p.fecha_devolucion,
+    p.estado
+<span class="text-purple-400">FROM</span>    <span class="text-green-400">PRESTAMO</span> p
+<span class="text-purple-400">JOIN</span>    <span class="text-green-400">SOCIO</span>    s <span class="text-purple-400">ON</span> s.cod_socio <span class="text-yellow-400">=</span> p.cod_socio
+<span class="text-purple-400">WHERE</span>   p.estado <span class="text-yellow-400">=</span> <span class="text-orange-400">'ACTIVO'</span>
+<span class="text-purple-400">ORDER BY</span> p.fecha_devolucion <span class="text-purple-400">ASC</span>;
+
+<span class="text-blue-400">-- UPDATE: Marcar préstamo como devuelto</span>
+<span class="text-purple-400">UPDATE</span> <span class="text-green-400">PRESTAMO</span>
+<span class="text-purple-400">SET</span>    estado           <span class="text-yellow-400">=</span> <span class="text-orange-400">'DEVUELTO'</span>,
+       fecha_devolucion <span class="text-yellow-400">=</span> <span class="text-cyan-400">SYSDATE</span>
+<span class="text-purple-400">WHERE</span>  cod_prestamo     <span class="text-yellow-400">=</span> <span class="text-orange-400">5001</span>;
+
+<span class="text-cyan-400">COMMIT</span>;</code></pre>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 px-2">
+                <div class="rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-100 dark:border-green-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-green-700 dark:text-green-400 font-mono">INSERT</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Agrega nuevas filas</p>
+                </div>
+                <div class="rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-blue-700 dark:text-blue-400 font-mono">SELECT + JOIN</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Consulta y combina tablas</p>
+                </div>
+                <div class="rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-orange-700 dark:text-orange-400 font-mono">UPDATE</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Modifica filas existentes</p>
+                </div>
+                <div class="rounded-lg bg-cyan-50 dark:bg-cyan-950/30 border border-cyan-100 dark:border-cyan-900/40 p-2.5 text-center">
+                  <p class="text-xs font-bold text-cyan-700 dark:text-cyan-400 font-mono">COMMIT</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">Confirma la transacción</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Ejercicio SQL 3 placeholder -->
-          <div class="rounded-2xl border border-dashed border-blue-200 dark:border-blue-800/60 bg-blue-50/30 dark:bg-blue-950/10 overflow-hidden">
-            <div class="flex items-center justify-between px-6 py-4">
+          <!-- Ejercicio SQL 3 — Taller ACID -->
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-lg hover:shadow-blue-50 dark:hover:shadow-blue-900/20 transition-all duration-300">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div class="flex items-center gap-3">
-                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-400 dark:text-blue-600 text-xs font-bold">03</span>
-                <h4 class="font-semibold text-gray-400 dark:text-gray-600">Taller SQL 3 – Próximamente</h4>
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold">03</span>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">Taller 1 – SQL Avanzado + Transacciones ACID</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Ajuste salarial extraordinario con control transaccional · Variante 1 · Tag: P01_FINAL</p>
+                </div>
               </div>
-              <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 font-medium">Pendiente</span>
+              <div class="flex gap-2 flex-wrap justify-end">
+                <span class="text-xs px-2 py-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono font-medium">CTE</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-mono font-medium">MERGE</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 font-mono font-medium">SAVEPOINT</span>
+                <span class="text-xs px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-mono font-medium">ACID</span>
+              </div>
+            </div>
+
+            <div class="p-4 space-y-5">
+
+              <!-- Contexto -->
+              <div class="rounded-xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 p-4 space-y-2">
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Contexto del taller</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  La empresa quiere aplicar un ajuste salarial extraordinario a empleados elegibles según reglas de negocio parametrizadas por variante. El objetivo es intervenir solo a los empleados correctos, respetar topes salariales y dejar evidencia de auditoría completa.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+                  <div class="text-center"><p class="text-xs font-bold text-indigo-700 dark:text-indigo-300">Tablas usadas</p><p class="text-xs text-gray-500 dark:text-gray-400">T1_EMPLOYEES<br>T1_DEPARTMENTS<br>T1_JOB_HISTORY<br>T1_VARIANTS<br>AUDIT_SALARY_T1</p></div>
+                  <div class="text-center"><p class="text-xs font-bold text-indigo-700 dark:text-indigo-300">Variante</p><p class="text-xs text-gray-500 dark:text-gray-400">1 — Depto 90 excluido<br>≥3 años antigüedad<br>Ventana 24 meses<br>Tope 120% promedio</p></div>
+                  <div class="text-center"><p class="text-xs font-bold text-indigo-700 dark:text-indigo-300">Reglas de ajuste</p><p class="text-xs text-gray-500 dark:text-gray-400">Brecha &gt;10% → +8%<br>Brecha &gt;5% → +5%<br>Brecha ≤5% → +3%</p></div>
+                  <div class="text-center"><p class="text-xs font-bold text-indigo-700 dark:text-indigo-300">Exclusiones</p><p class="text-xs text-gray-500 dark:text-gray-400">Sin departamento<br>Depto &lt;3 empleados<br>Historial reciente<br>Managers/directivos</p></div>
+                </div>
+              </div>
+
+              <!-- Pipeline de 5 etapas -->
+              <div class="space-y-2">
+                <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider px-1">Pipeline de ejecución</p>
+                <div class="flex flex-wrap gap-2">
+                  <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 text-xs font-semibold text-yellow-700 dark:text-yellow-400"><span class="w-4 h-4 rounded-full bg-yellow-200 dark:bg-yellow-900 flex items-center justify-center font-bold text-xs">1</span>Diagnóstico</div>
+                  <span class="text-gray-300 dark:text-gray-700 self-center">→</span>
+                  <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 text-xs font-semibold text-blue-700 dark:text-blue-400"><span class="w-4 h-4 rounded-full bg-blue-200 dark:bg-blue-900 flex items-center justify-center font-bold text-xs">2</span>Decisión</div>
+                  <span class="text-gray-300 dark:text-gray-700 self-center">→</span>
+                  <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 text-xs font-semibold text-indigo-700 dark:text-indigo-400"><span class="w-4 h-4 rounded-full bg-indigo-200 dark:bg-indigo-900 flex items-center justify-center font-bold text-xs">3</span>Prevalidación</div>
+                  <span class="text-gray-300 dark:text-gray-700 self-center">→</span>
+                  <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800 text-xs font-semibold text-purple-700 dark:text-purple-400"><span class="w-4 h-4 rounded-full bg-purple-200 dark:bg-purple-900 flex items-center justify-center font-bold text-xs">4</span>Ejecución ACID</div>
+                  <span class="text-gray-300 dark:text-gray-700 self-center">→</span>
+                  <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 text-xs font-semibold text-green-700 dark:text-green-400"><span class="w-4 h-4 rounded-full bg-green-200 dark:bg-green-900 flex items-center justify-center font-bold text-xs">5</span>Validación</div>
+                </div>
+              </div>
+
+              <!-- Etapa 1: Diagnóstico -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-md bg-yellow-200 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+                  <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Consulta diagnóstica — estadísticas por departamento + ranking salarial</h5>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-gray-800">
+                  <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
+                    <span class="text-xs text-gray-400 font-mono">etapa1_diagnostico.sql</span>
+                    <div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-400/60"></span><span class="w-3 h-3 rounded-full bg-yellow-400/60"></span><span class="w-3 h-3 rounded-full bg-green-400/60"></span></div>
+                  </div>
+                  <pre class="bg-gray-950 p-4 overflow-x-auto text-xs leading-relaxed"><code><span class="text-blue-400">-- Lee parámetros de la variante (no valores fijos)</span>
+<span class="text-purple-400">WITH</span> variante <span class="text-purple-400">AS</span> (
+    <span class="text-purple-400">SELECT</span> excluded_department_id, min_years_service,
+           recent_job_history_months, max_salary_vs_avg_pct
+    <span class="text-purple-400">FROM</span>   t1_variants <span class="text-purple-400">WHERE</span> variant_id <span class="text-yellow-400">=</span> <span class="text-orange-400">1</span>
+),
+dept_stats <span class="text-purple-400">AS</span> (
+    <span class="text-purple-400">SELECT</span> department_id,
+           <span class="text-cyan-400">AVG</span>(salary) <span class="text-purple-400">AS</span> dept_avg_salary,
+           <span class="text-cyan-400">MAX</span>(salary) <span class="text-purple-400">AS</span> dept_max_salary,
+           <span class="text-cyan-400">COUNT</span>(<span class="text-yellow-400">*</span>)    <span class="text-purple-400">AS</span> dept_employee_count
+    <span class="text-purple-400">FROM</span>   t1_employees
+    <span class="text-purple-400">WHERE</span>  department_id <span class="text-purple-400">IS NOT NULL</span>
+    <span class="text-purple-400">GROUP BY</span> department_id
+)
+<span class="text-purple-400">SELECT</span>
+    e.employee_id, e.first_name, e.last_name, e.salary,
+    <span class="text-cyan-400">TRUNC</span>(<span class="text-cyan-400">MONTHS_BETWEEN</span>(<span class="text-cyan-400">SYSDATE</span>, e.hire_date) <span class="text-yellow-400">/</span> <span class="text-orange-400">12</span>) <span class="text-purple-400">AS</span> years_service,
+    <span class="text-cyan-400">ROUND</span>(ds.dept_avg_salary, <span class="text-orange-400">2</span>)                    <span class="text-purple-400">AS</span> dept_avg,
+    <span class="text-cyan-400">ROUND</span>(((ds.dept_avg_salary <span class="text-yellow-400">-</span> e.salary)
+           <span class="text-yellow-400">/</span> ds.dept_avg_salary) <span class="text-yellow-400">*</span> <span class="text-orange-400">100</span>, <span class="text-orange-400">2</span>)          <span class="text-purple-400">AS</span> pct_gap_to_avg,
+    <span class="text-cyan-400">DENSE_RANK</span>() <span class="text-purple-400">OVER</span> (
+        <span class="text-purple-400">PARTITION BY</span> e.department_id
+        <span class="text-purple-400">ORDER BY</span> e.salary <span class="text-purple-400">DESC</span>
+    )                                                  <span class="text-purple-400">AS</span> salary_rank
+<span class="text-purple-400">FROM</span>   t1_employees e
+<span class="text-purple-400">JOIN</span>   dept_stats   ds <span class="text-purple-400">ON</span> ds.department_id <span class="text-yellow-400">=</span> e.department_id
+<span class="text-purple-400">ORDER BY</span> e.department_id, e.salary <span class="text-purple-400">DESC</span>;</code></pre>
+                </div>
+              </div>
+
+              <!-- Etapa 2: Decisión -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-md bg-blue-200 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+                  <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Decisión de elegibles — <code class="text-xs bg-gray-100 dark:bg-gray-800 px-1 rounded">eligibility_flag</code> + <code class="text-xs bg-gray-100 dark:bg-gray-800 px-1 rounded">exclusion_reason</code> + <code class="text-xs bg-gray-100 dark:bg-gray-800 px-1 rounded">adjustment_pct</code></h5>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-gray-800">
+                  <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
+                    <span class="text-xs text-gray-400 font-mono">etapa2_decision.sql</span>
+                    <div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-400/60"></span><span class="w-3 h-3 rounded-full bg-yellow-400/60"></span><span class="w-3 h-3 rounded-full bg-green-400/60"></span></div>
+                  </div>
+                  <pre class="bg-gray-950 p-4 overflow-x-auto text-xs leading-relaxed"><code><span class="text-blue-400">-- Clasificación con CASE anidado — reglas en cascada</span>
+<span class="text-purple-400">CASE</span>
+    <span class="text-purple-400">WHEN</span> department_id <span class="text-purple-400">IS NULL</span>                   <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">WHEN</span> department_id <span class="text-yellow-400">=</span> excluded_department_id  <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">WHEN</span> dept_employee_count <span class="text-yellow-400">&lt;</span> <span class="text-orange-400">3</span>               <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">WHEN</span> years_service <span class="text-yellow-400">&lt;</span> min_years_service     <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">WHEN</span> recent_job_history_flag <span class="text-yellow-400">=</span> <span class="text-orange-400">'SI'</span>        <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">WHEN</span> manager_or_exec_flag    <span class="text-yellow-400">=</span> <span class="text-orange-400">'SI'</span>        <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">WHEN</span> pct_gap_to_avg <span class="text-yellow-400">&lt;=</span> <span class="text-orange-400">0</span>                  <span class="text-purple-400">THEN</span> <span class="text-orange-400">'NO_ELEGIBLE'</span>
+    <span class="text-purple-400">ELSE</span>                                           <span class="text-orange-400">'ELEGIBLE'</span>
+<span class="text-purple-400">END AS</span> eligibility_flag,
+
+<span class="text-blue-400">-- Porcentaje de ajuste según tramo de brecha</span>
+<span class="text-purple-400">CASE</span>
+    <span class="text-purple-400">WHEN</span> pct_gap_to_avg <span class="text-yellow-400">&gt;</span> gap_high_threshold_pct <span class="text-purple-400">THEN</span> raise_high_pct
+    <span class="text-purple-400">WHEN</span> pct_gap_to_avg <span class="text-yellow-400">&gt;</span> gap_mid_threshold_pct  <span class="text-purple-400">THEN</span> raise_mid_pct
+    <span class="text-purple-400">ELSE</span>                                           raise_low_pct
+<span class="text-purple-400">END AS</span> adjustment_pct</code></pre>
+                </div>
+              </div>
+
+              <!-- Etapa 4: Ejecución ACID -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-md bg-purple-200 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+                  <h5 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Ejecución transaccional — SAVEPOINT · MERGE · Auditoría · COMMIT/ROLLBACK</h5>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-gray-800">
+                  <div class="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700">
+                    <span class="text-xs text-gray-400 font-mono">etapa4_ejecucion_acid.sql</span>
+                    <div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-400/60"></span><span class="w-3 h-3 rounded-full bg-yellow-400/60"></span><span class="w-3 h-3 rounded-full bg-green-400/60"></span></div>
+                  </div>
+                  <pre class="bg-gray-950 p-4 overflow-x-auto text-xs leading-relaxed"><code><span class="text-blue-400">-- Punto de restauración antes del cambio</span>
+<span class="text-cyan-400">SAVEPOINT</span> sv_before_adjustment;
+
+<span class="text-blue-400">-- MERGE: actualiza salario solo a elegibles con tope aplicado</span>
+<span class="text-purple-400">MERGE INTO</span> t1_employees tgt
+<span class="text-purple-400">USING</span> ( <span class="text-blue-400">/* subconsulta con elegibles + salary_new calculado */</span>
+    <span class="text-purple-400">SELECT</span> employee_id,
+           <span class="text-cyan-400">LEAST</span>(
+               <span class="text-cyan-400">ROUND</span>(salary_before <span class="text-yellow-400">*</span> (<span class="text-orange-400">1</span> <span class="text-yellow-400">+</span> adjustment_pct <span class="text-yellow-400">/</span> <span class="text-orange-400">100</span>), <span class="text-orange-400">2</span>),
+               max_allowed_salary
+           ) <span class="text-purple-400">AS</span> salary_new
+    <span class="text-purple-400">FROM</span>   elegibles
+) src
+<span class="text-purple-400">ON</span> (tgt.employee_id <span class="text-yellow-400">=</span> src.employee_id)
+<span class="text-purple-400">WHEN MATCHED THEN</span>
+    <span class="text-purple-400">UPDATE SET</span> tgt.salary <span class="text-yellow-400">=</span> src.salary_new;
+
+<span class="text-blue-400">-- INSERT en tabla de auditoría</span>
+<span class="text-purple-400">INSERT INTO</span> audit_salary_adjustments_t1
+    (audit_id, execution_tag, variant_id, employee_id,
+     salary_before, salary_after, rule_applied, executed_by, executed_at)
+<span class="text-purple-400">SELECT</span>
+    audit_salary_adj_t1_seq.<span class="text-cyan-400">NEXTVAL</span>,
+    <span class="text-orange-400">'P01_FINAL'</span>, <span class="text-orange-400">1</span>, ep.employee_id,
+    ep.salary_before_est, ep.salary_after, ep.rule_applied,
+    <span class="text-cyan-400">USER</span>, <span class="text-cyan-400">SYSDATE</span>
+<span class="text-purple-400">FROM</span> elegibles_post ep;
+
+<span class="text-blue-400">-- Control: ROLLBACK si algún salario supera el tope</span>
+<span class="text-purple-400">DECLARE</span>
+    v_incumple <span class="text-yellow-400">NUMBER</span>;
+<span class="text-purple-400">BEGIN</span>
+    <span class="text-purple-400">SELECT</span> <span class="text-cyan-400">COUNT</span>(<span class="text-yellow-400">*</span>) <span class="text-purple-400">INTO</span> v_incumple
+    <span class="text-purple-400">FROM</span>   audit_salary_adjustments_t1 a
+    <span class="text-purple-400">JOIN</span>   <span class="text-blue-400">/* dept_stats con promedio post-update */</span>
+    <span class="text-purple-400">WHERE</span>  a.execution_tag <span class="text-yellow-400">=</span> <span class="text-orange-400">'P01_FINAL'</span>
+      <span class="text-purple-400">AND</span>   salary_after <span class="text-yellow-400">&gt;</span> max_allowed_salary;
+
+    <span class="text-purple-400">IF</span> v_incumple <span class="text-yellow-400">&gt;</span> <span class="text-orange-400">0</span> <span class="text-purple-400">THEN</span>
+        <span class="text-cyan-400">ROLLBACK TO</span> sv_before_adjustment;
+        <span class="text-cyan-400">DBMS_OUTPUT</span>.PUT_LINE(<span class="text-orange-400">'ROLLBACK: '</span> <span class="text-yellow-400">||</span> v_incumple <span class="text-yellow-400">||</span> <span class="text-orange-400">' incumplimientos.'</span>);
+    <span class="text-purple-400">ELSE</span>
+        <span class="text-cyan-400">COMMIT</span>;
+        <span class="text-cyan-400">DBMS_OUTPUT</span>.PUT_LINE(<span class="text-orange-400">'COMMIT: todos los ajustes respetan el tope 120%.'</span>);
+    <span class="text-purple-400">END IF</span>;
+<span class="text-purple-400">END</span>;
+<span class="text-yellow-400">/</span></code></pre>
+                </div>
+              </div>
+
+              <!-- Propiedades ACID -->
+              <div class="space-y-2">
+                <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider px-1">Propiedades ACID garantizadas</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="rounded-xl bg-blue-50/50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-3 space-y-1">
+                    <p class="text-xs font-bold text-blue-700 dark:text-blue-400">⚛ Atomicidad</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">El UPDATE de salarios y el INSERT de auditoría son una sola unidad. Si la validación detecta incumplimientos, <code class="bg-white dark:bg-gray-800 px-0.5 rounded">ROLLBACK TO SAVEPOINT</code> deshace ambas operaciones.</p>
+                  </div>
+                  <div class="rounded-xl bg-green-50/50 dark:bg-green-950/20 border border-green-100 dark:border-green-900/40 p-3 space-y-1">
+                    <p class="text-xs font-bold text-green-700 dark:text-green-400">✓ Consistencia</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Las reglas (tope 120%, elegibilidad, exclusiones) se verifican antes y después. Solo se hace <code class="bg-white dark:bg-gray-800 px-0.5 rounded">COMMIT</code> cuando todos los registros muestran CUMPLE.</p>
+                  </div>
+                  <div class="rounded-xl bg-purple-50/50 dark:bg-purple-950/20 border border-purple-100 dark:border-purple-900/40 p-3 space-y-1">
+                    <p class="text-xs font-bold text-purple-700 dark:text-purple-400">🔒 Aislamiento</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Oracle opera en nivel READ COMMITTED. Mientras no se hace COMMIT, otras sesiones ven los salarios anteriores gracias al mecanismo MVCC.</p>
+                  </div>
+                  <div class="rounded-xl bg-orange-50/50 dark:bg-orange-950/20 border border-orange-100 dark:border-orange-900/40 p-3 space-y-1">
+                    <p class="text-xs font-bold text-orange-700 dark:text-orange-400">💾 Durabilidad</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Tras el COMMIT, Oracle escribe en el redo log y persiste en disco. Un fallo posterior no revierte los cambios: la fase REDO los recupera al reiniciar.</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
